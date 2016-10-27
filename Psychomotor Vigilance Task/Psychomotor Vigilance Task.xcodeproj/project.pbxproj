@@ -1,0 +1,543 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		65435D8F1DC2C0C500C334F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65435D8E1DC2C0C500C334F8 /* AppDelegate.swift */; };
+		65435D911DC2C0C500C334F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65435D901DC2C0C500C334F8 /* ViewController.swift */; };
+		65435D941DC2C0C500C334F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65435D921DC2C0C500C334F8 /* Main.storyboard */; };
+		65435D971DC2C0C500C334F8 /* Psychomotor_Vigilance_Task.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65435D951DC2C0C500C334F8 /* Psychomotor_Vigilance_Task.xcdatamodeld */; };
+		65435D991DC2C0C500C334F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65435D981DC2C0C500C334F8 /* Assets.xcassets */; };
+		65435D9C1DC2C0C500C334F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65435D9A1DC2C0C500C334F8 /* LaunchScreen.storyboard */; };
+		65435DA71DC2C0C600C334F8 /* Psychomotor_Vigilance_TaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65435DA61DC2C0C600C334F8 /* Psychomotor_Vigilance_TaskTests.swift */; };
+		65435DB21DC2C0C600C334F8 /* Psychomotor_Vigilance_TaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65435DB11DC2C0C600C334F8 /* Psychomotor_Vigilance_TaskUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		65435DA31DC2C0C600C334F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65435D831DC2C0C500C334F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65435D8A1DC2C0C500C334F8;
+			remoteInfo = "Psychomotor Vigilance Task";
+		};
+		65435DAE1DC2C0C600C334F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65435D831DC2C0C500C334F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65435D8A1DC2C0C500C334F8;
+			remoteInfo = "Psychomotor Vigilance Task";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		65435D8B1DC2C0C500C334F8 /* Psychomotor Vigilance Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Psychomotor Vigilance Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		65435D8E1DC2C0C500C334F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		65435D901DC2C0C500C334F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		65435D931DC2C0C500C334F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		65435D961DC2C0C500C334F8 /* Psychomotor_Vigilance_Task.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Psychomotor_Vigilance_Task.xcdatamodel; sourceTree = "<group>"; };
+		65435D981DC2C0C500C334F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		65435D9B1DC2C0C500C334F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		65435D9D1DC2C0C500C334F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65435DA21DC2C0C600C334F8 /* Psychomotor Vigilance TaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Psychomotor Vigilance TaskTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		65435DA61DC2C0C600C334F8 /* Psychomotor_Vigilance_TaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Psychomotor_Vigilance_TaskTests.swift; sourceTree = "<group>"; };
+		65435DA81DC2C0C600C334F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65435DAD1DC2C0C600C334F8 /* Psychomotor Vigilance TaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Psychomotor Vigilance TaskUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		65435DB11DC2C0C600C334F8 /* Psychomotor_Vigilance_TaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Psychomotor_Vigilance_TaskUITests.swift; sourceTree = "<group>"; };
+		65435DB31DC2C0C600C334F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		65435D881DC2C0C500C334F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65435D9F1DC2C0C600C334F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65435DAA1DC2C0C600C334F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		65435D821DC2C0C500C334F8 = {
+			isa = PBXGroup;
+			children = (
+				65435D8D1DC2C0C500C334F8 /* Psychomotor Vigilance Task */,
+				65435DA51DC2C0C600C334F8 /* Psychomotor Vigilance TaskTests */,
+				65435DB01DC2C0C600C334F8 /* Psychomotor Vigilance TaskUITests */,
+				65435D8C1DC2C0C500C334F8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		65435D8C1DC2C0C500C334F8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				65435D8B1DC2C0C500C334F8 /* Psychomotor Vigilance Task.app */,
+				65435DA21DC2C0C600C334F8 /* Psychomotor Vigilance TaskTests.xctest */,
+				65435DAD1DC2C0C600C334F8 /* Psychomotor Vigilance TaskUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		65435D8D1DC2C0C500C334F8 /* Psychomotor Vigilance Task */ = {
+			isa = PBXGroup;
+			children = (
+				65435D8E1DC2C0C500C334F8 /* AppDelegate.swift */,
+				65435D901DC2C0C500C334F8 /* ViewController.swift */,
+				65435D921DC2C0C500C334F8 /* Main.storyboard */,
+				65435D981DC2C0C500C334F8 /* Assets.xcassets */,
+				65435D9A1DC2C0C500C334F8 /* LaunchScreen.storyboard */,
+				65435D9D1DC2C0C500C334F8 /* Info.plist */,
+				65435D951DC2C0C500C334F8 /* Psychomotor_Vigilance_Task.xcdatamodeld */,
+			);
+			path = "Psychomotor Vigilance Task";
+			sourceTree = "<group>";
+		};
+		65435DA51DC2C0C600C334F8 /* Psychomotor Vigilance TaskTests */ = {
+			isa = PBXGroup;
+			children = (
+				65435DA61DC2C0C600C334F8 /* Psychomotor_Vigilance_TaskTests.swift */,
+				65435DA81DC2C0C600C334F8 /* Info.plist */,
+			);
+			path = "Psychomotor Vigilance TaskTests";
+			sourceTree = "<group>";
+		};
+		65435DB01DC2C0C600C334F8 /* Psychomotor Vigilance TaskUITests */ = {
+			isa = PBXGroup;
+			children = (
+				65435DB11DC2C0C600C334F8 /* Psychomotor_Vigilance_TaskUITests.swift */,
+				65435DB31DC2C0C600C334F8 /* Info.plist */,
+			);
+			path = "Psychomotor Vigilance TaskUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		65435D8A1DC2C0C500C334F8 /* Psychomotor Vigilance Task */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65435DB61DC2C0C600C334F8 /* Build configuration list for PBXNativeTarget "Psychomotor Vigilance Task" */;
+			buildPhases = (
+				65435D871DC2C0C500C334F8 /* Sources */,
+				65435D881DC2C0C500C334F8 /* Frameworks */,
+				65435D891DC2C0C500C334F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Psychomotor Vigilance Task";
+			productName = "Psychomotor Vigilance Task";
+			productReference = 65435D8B1DC2C0C500C334F8 /* Psychomotor Vigilance Task.app */;
+			productType = "com.apple.product-type.application";
+		};
+		65435DA11DC2C0C600C334F8 /* Psychomotor Vigilance TaskTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65435DB91DC2C0C600C334F8 /* Build configuration list for PBXNativeTarget "Psychomotor Vigilance TaskTests" */;
+			buildPhases = (
+				65435D9E1DC2C0C600C334F8 /* Sources */,
+				65435D9F1DC2C0C600C334F8 /* Frameworks */,
+				65435DA01DC2C0C600C334F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				65435DA41DC2C0C600C334F8 /* PBXTargetDependency */,
+			);
+			name = "Psychomotor Vigilance TaskTests";
+			productName = "Psychomotor Vigilance TaskTests";
+			productReference = 65435DA21DC2C0C600C334F8 /* Psychomotor Vigilance TaskTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		65435DAC1DC2C0C600C334F8 /* Psychomotor Vigilance TaskUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65435DBC1DC2C0C600C334F8 /* Build configuration list for PBXNativeTarget "Psychomotor Vigilance TaskUITests" */;
+			buildPhases = (
+				65435DA91DC2C0C600C334F8 /* Sources */,
+				65435DAA1DC2C0C600C334F8 /* Frameworks */,
+				65435DAB1DC2C0C600C334F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				65435DAF1DC2C0C600C334F8 /* PBXTargetDependency */,
+			);
+			name = "Psychomotor Vigilance TaskUITests";
+			productName = "Psychomotor Vigilance TaskUITests";
+			productReference = 65435DAD1DC2C0C600C334F8 /* Psychomotor Vigilance TaskUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		65435D831DC2C0C500C334F8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = vu_sleep;
+				TargetAttributes = {
+					65435D8A1DC2C0C500C334F8 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+					65435DA11DC2C0C600C334F8 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 65435D8A1DC2C0C500C334F8;
+					};
+					65435DAC1DC2C0C600C334F8 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 65435D8A1DC2C0C500C334F8;
+					};
+				};
+			};
+			buildConfigurationList = 65435D861DC2C0C500C334F8 /* Build configuration list for PBXProject "Psychomotor Vigilance Task" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 65435D821DC2C0C500C334F8;
+			productRefGroup = 65435D8C1DC2C0C500C334F8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				65435D8A1DC2C0C500C334F8 /* Psychomotor Vigilance Task */,
+				65435DA11DC2C0C600C334F8 /* Psychomotor Vigilance TaskTests */,
+				65435DAC1DC2C0C600C334F8 /* Psychomotor Vigilance TaskUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		65435D891DC2C0C500C334F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65435D9C1DC2C0C500C334F8 /* LaunchScreen.storyboard in Resources */,
+				65435D991DC2C0C500C334F8 /* Assets.xcassets in Resources */,
+				65435D941DC2C0C500C334F8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65435DA01DC2C0C600C334F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65435DAB1DC2C0C600C334F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		65435D871DC2C0C500C334F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65435D911DC2C0C500C334F8 /* ViewController.swift in Sources */,
+				65435D8F1DC2C0C500C334F8 /* AppDelegate.swift in Sources */,
+				65435D971DC2C0C500C334F8 /* Psychomotor_Vigilance_Task.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65435D9E1DC2C0C600C334F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65435DA71DC2C0C600C334F8 /* Psychomotor_Vigilance_TaskTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65435DA91DC2C0C600C334F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65435DB21DC2C0C600C334F8 /* Psychomotor_Vigilance_TaskUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		65435DA41DC2C0C600C334F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65435D8A1DC2C0C500C334F8 /* Psychomotor Vigilance Task */;
+			targetProxy = 65435DA31DC2C0C600C334F8 /* PBXContainerItemProxy */;
+		};
+		65435DAF1DC2C0C600C334F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65435D8A1DC2C0C500C334F8 /* Psychomotor Vigilance Task */;
+			targetProxy = 65435DAE1DC2C0C600C334F8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		65435D921DC2C0C500C334F8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				65435D931DC2C0C500C334F8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		65435D9A1DC2C0C500C334F8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				65435D9B1DC2C0C500C334F8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		65435DB41DC2C0C600C334F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		65435DB51DC2C0C600C334F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		65435DB71DC2C0C600C334F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Psychomotor Vigilance Task/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.vumc.sleep.Psychomotor-Vigilance-Task";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		65435DB81DC2C0C600C334F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Psychomotor Vigilance Task/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.vumc.sleep.Psychomotor-Vigilance-Task";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		65435DBA1DC2C0C600C334F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Psychomotor Vigilance TaskTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.vumc.sleep.Psychomotor-Vigilance-TaskTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Psychomotor Vigilance Task.app/Psychomotor Vigilance Task";
+			};
+			name = Debug;
+		};
+		65435DBB1DC2C0C600C334F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Psychomotor Vigilance TaskTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.vumc.sleep.Psychomotor-Vigilance-TaskTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Psychomotor Vigilance Task.app/Psychomotor Vigilance Task";
+			};
+			name = Release;
+		};
+		65435DBD1DC2C0C600C334F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "Psychomotor Vigilance TaskUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.vumc.sleep.Psychomotor-Vigilance-TaskUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Psychomotor Vigilance Task";
+			};
+			name = Debug;
+		};
+		65435DBE1DC2C0C600C334F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "Psychomotor Vigilance TaskUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.vumc.sleep.Psychomotor-Vigilance-TaskUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Psychomotor Vigilance Task";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		65435D861DC2C0C500C334F8 /* Build configuration list for PBXProject "Psychomotor Vigilance Task" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65435DB41DC2C0C600C334F8 /* Debug */,
+				65435DB51DC2C0C600C334F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65435DB61DC2C0C600C334F8 /* Build configuration list for PBXNativeTarget "Psychomotor Vigilance Task" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65435DB71DC2C0C600C334F8 /* Debug */,
+				65435DB81DC2C0C600C334F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		65435DB91DC2C0C600C334F8 /* Build configuration list for PBXNativeTarget "Psychomotor Vigilance TaskTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65435DBA1DC2C0C600C334F8 /* Debug */,
+				65435DBB1DC2C0C600C334F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		65435DBC1DC2C0C600C334F8 /* Build configuration list for PBXNativeTarget "Psychomotor Vigilance TaskUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65435DBD1DC2C0C600C334F8 /* Debug */,
+				65435DBE1DC2C0C600C334F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		65435D951DC2C0C500C334F8 /* Psychomotor_Vigilance_Task.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				65435D961DC2C0C500C334F8 /* Psychomotor_Vigilance_Task.xcdatamodel */,
+			);
+			currentVersion = 65435D961DC2C0C500C334F8 /* Psychomotor_Vigilance_Task.xcdatamodel */;
+			path = Psychomotor_Vigilance_Task.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 65435D831DC2C0C500C334F8 /* Project object */;
+}
