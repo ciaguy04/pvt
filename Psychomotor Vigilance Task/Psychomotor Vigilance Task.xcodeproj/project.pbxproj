@@ -15,6 +15,7 @@
 		65435D9C1DC2C0C500C334F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65435D9A1DC2C0C500C334F8 /* LaunchScreen.storyboard */; };
 		65435DA71DC2C0C600C334F8 /* Psychomotor_Vigilance_TaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65435DA61DC2C0C600C334F8 /* Psychomotor_Vigilance_TaskTests.swift */; };
 		65435DB21DC2C0C600C334F8 /* Psychomotor_Vigilance_TaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65435DB11DC2C0C600C334F8 /* Psychomotor_Vigilance_TaskUITests.swift */; };
+		65435DC01DC2C1F000C334F8 /* PVTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65435DBF1DC2C1F000C334F8 /* PVTViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		65435DAD1DC2C0C600C334F8 /* Psychomotor Vigilance TaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Psychomotor Vigilance TaskUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65435DB11DC2C0C600C334F8 /* Psychomotor_Vigilance_TaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Psychomotor_Vigilance_TaskUITests.swift; sourceTree = "<group>"; };
 		65435DB31DC2C0C600C334F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65435DBF1DC2C1F000C334F8 /* PVTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVTViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				65435D9A1DC2C0C500C334F8 /* LaunchScreen.storyboard */,
 				65435D9D1DC2C0C500C334F8 /* Info.plist */,
 				65435D951DC2C0C500C334F8 /* Psychomotor_Vigilance_Task.xcdatamodeld */,
+				65435DBF1DC2C1F000C334F8 /* PVTViewController.swift */,
 			);
 			path = "Psychomotor Vigilance Task";
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				65435D911DC2C0C500C334F8 /* ViewController.swift in Sources */,
 				65435D8F1DC2C0C500C334F8 /* AppDelegate.swift in Sources */,
 				65435D971DC2C0C500C334F8 /* Psychomotor_Vigilance_Task.xcdatamodeld in Sources */,
+				65435DC01DC2C1F000C334F8 /* PVTViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
