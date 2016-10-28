@@ -16,6 +16,7 @@
 		65435DA71DC2C0C600C334F8 /* Psychomotor_Vigilance_TaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65435DA61DC2C0C600C334F8 /* Psychomotor_Vigilance_TaskTests.swift */; };
 		65435DB21DC2C0C600C334F8 /* Psychomotor_Vigilance_TaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65435DB11DC2C0C600C334F8 /* Psychomotor_Vigilance_TaskUITests.swift */; };
 		65435DC01DC2C1F000C334F8 /* PVTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65435DBF1DC2C1F000C334F8 /* PVTViewController.swift */; };
+		90BA660C0C1BBA779BF6D5FE /* Pods_Psychomotor_Vigilance_Task.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1986C9DC198E833FFF1C0048 /* Pods_Psychomotor_Vigilance_Task.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1986C9DC198E833FFF1C0048 /* Pods_Psychomotor_Vigilance_Task.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Psychomotor_Vigilance_Task.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		472C0DDCF92762B2028A5DF7 /* Pods-Psychomotor Vigilance Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psychomotor Vigilance Task.release.xcconfig"; path = "Pods/Target Support Files/Pods-Psychomotor Vigilance Task/Pods-Psychomotor Vigilance Task.release.xcconfig"; sourceTree = "<group>"; };
 		65435D8B1DC2C0C500C334F8 /* Psychomotor Vigilance Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Psychomotor Vigilance Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65435D8E1DC2C0C500C334F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65435D901DC2C0C500C334F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 		65435DB11DC2C0C600C334F8 /* Psychomotor_Vigilance_TaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Psychomotor_Vigilance_TaskUITests.swift; sourceTree = "<group>"; };
 		65435DB31DC2C0C600C334F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65435DBF1DC2C1F000C334F8 /* PVTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVTViewController.swift; sourceTree = "<group>"; };
+		92869A8593361F9997A2A118 /* Pods-Psychomotor Vigilance Task.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psychomotor Vigilance Task.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Psychomotor Vigilance Task/Pods-Psychomotor Vigilance Task.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90BA660C0C1BBA779BF6D5FE /* Pods_Psychomotor_Vigilance_Task.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1311EFBAFD3523B6A15986DE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				92869A8593361F9997A2A118 /* Pods-Psychomotor Vigilance Task.debug.xcconfig */,
+				472C0DDCF92762B2028A5DF7 /* Pods-Psychomotor Vigilance Task.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		408E258A5BEF5DB1EDBCEE1A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1986C9DC198E833FFF1C0048 /* Pods_Psychomotor_Vigilance_Task.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		65435D821DC2C0C500C334F8 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +107,8 @@
 				65435DA51DC2C0C600C334F8 /* Psychomotor Vigilance TaskTests */,
 				65435DB01DC2C0C600C334F8 /* Psychomotor Vigilance TaskUITests */,
 				65435D8C1DC2C0C500C334F8 /* Products */,
+				1311EFBAFD3523B6A15986DE /* Pods */,
+				408E258A5BEF5DB1EDBCEE1A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,11 +127,7 @@
 			children = (
 				65435D8E1DC2C0C500C334F8 /* AppDelegate.swift */,
 				65435D901DC2C0C500C334F8 /* ViewController.swift */,
-				65435D921DC2C0C500C334F8 /* Main.storyboard */,
-				65435D981DC2C0C500C334F8 /* Assets.xcassets */,
-				65435D9A1DC2C0C500C334F8 /* LaunchScreen.storyboard */,
-				65435D9D1DC2C0C500C334F8 /* Info.plist */,
-				65435D951DC2C0C500C334F8 /* Psychomotor_Vigilance_Task.xcdatamodeld */,
+				65435DC11DC2CB3700C334F8 /* Supporting Files */,
 				65435DBF1DC2C1F000C334F8 /* PVTViewController.swift */,
 			);
 			path = "Psychomotor Vigilance Task";
@@ -131,6 +151,18 @@
 			path = "Psychomotor Vigilance TaskUITests";
 			sourceTree = "<group>";
 		};
+		65435DC11DC2CB3700C334F8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				65435D921DC2C0C500C334F8 /* Main.storyboard */,
+				65435D981DC2C0C500C334F8 /* Assets.xcassets */,
+				65435D9A1DC2C0C500C334F8 /* LaunchScreen.storyboard */,
+				65435D9D1DC2C0C500C334F8 /* Info.plist */,
+				65435D951DC2C0C500C334F8 /* Psychomotor_Vigilance_Task.xcdatamodeld */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +170,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65435DB61DC2C0C600C334F8 /* Build configuration list for PBXNativeTarget "Psychomotor Vigilance Task" */;
 			buildPhases = (
+				51C5CB491BE8B3E5E6993111 /* [CP] Check Pods Manifest.lock */,
 				65435D871DC2C0C500C334F8 /* Sources */,
 				65435D881DC2C0C500C334F8 /* Frameworks */,
 				65435D891DC2C0C500C334F8 /* Resources */,
+				17357A55ADCFB7408223ACE2 /* [CP] Embed Pods Frameworks */,
+				0984484CFF396F0532CCDA3E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -259,6 +294,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0984484CFF396F0532CCDA3E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Psychomotor Vigilance Task/Pods-Psychomotor Vigilance Task-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		17357A55ADCFB7408223ACE2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Psychomotor Vigilance Task/Pods-Psychomotor Vigilance Task-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		51C5CB491BE8B3E5E6993111 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		65435D871DC2C0C500C334F8 /* Sources */ = {
@@ -416,6 +499,7 @@
 		};
 		65435DB71DC2C0C600C334F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92869A8593361F9997A2A118 /* Pods-Psychomotor Vigilance Task.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Psychomotor Vigilance Task/Info.plist";
@@ -428,6 +512,7 @@
 		};
 		65435DB81DC2C0C600C334F8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 472C0DDCF92762B2028A5DF7 /* Pods-Psychomotor Vigilance Task.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Psychomotor Vigilance Task/Info.plist";
@@ -511,6 +596,7 @@
 				65435DB81DC2C0C600C334F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		65435DB91DC2C0C600C334F8 /* Build configuration list for PBXNativeTarget "Psychomotor Vigilance TaskTests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +605,7 @@
 				65435DBB1DC2C0C600C334F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		65435DBC1DC2C0C600C334F8 /* Build configuration list for PBXNativeTarget "Psychomotor Vigilance TaskUITests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +614,7 @@
 				65435DBE1DC2C0C600C334F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
