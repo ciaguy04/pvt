@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        postToURL("https://redcap.vanderbilt.edu/api/")
+        //postToURL("https://redcap.vanderbilt.edu/api/")
         // Do any additional setup after loading the view, typically from a nib.
     }
 

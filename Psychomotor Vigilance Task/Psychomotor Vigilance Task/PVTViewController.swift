@@ -21,10 +21,11 @@ class PVTViewController: UIViewController {
     var trial_timer = Timer()              //timer within a given trial
     var trial_countdown_timer = Timer()   //randomly generated delay for trial start if trial_state == .Active
     var test_state_timer = Timer()        //timer to check test state
-    var trial_state: TrialState             //TODO: consider adding logic that resets start_trial_countdown() when this is changed to .Inactive (whether active trial is being administered)
+    var trial_state: TrialState
     var start_trial_time: Int64             //the beginning of a given trial
     var current_trial_time: Int64           //used to compare current time to start_trial_time
     var start_pvt_time: Int64               //use this variable to track when 3 minutes are up
+    var test_data: Test
     
     
     //MARK: Initializer
@@ -33,6 +34,7 @@ class PVTViewController: UIViewController {
         self.current_trial_time = 0
         self.start_pvt_time = 0
         self.trial_state = .Inactive
+        self.test_data = Test()
         super.init(coder: aDecoder)
     }
     
@@ -46,7 +48,6 @@ class PVTViewController: UIViewController {
         super.viewDidAppear(animated)
         self.start_pvt_time = currentTimeMillis()
         self.test_state_timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(start_trial_countdown), userInfo: nil, repeats: true)
-        //TODO: add while loop testing for whether 3 minutes is up.  if not, pick random number 2-8s and call start_trial_countdown(num: Double)
     }
     
     override func didReceiveMemoryWarning() {
@@ -91,8 +92,6 @@ class PVTViewController: UIViewController {
         }
         
         //start_trial()
-        //TODO: add argument to vary the delay time
-        //TODO: consider setting state to .Inactive if not already done.
     }
     
     @objc func start_trial(){
@@ -110,6 +109,7 @@ class PVTViewController: UIViewController {
         }
         else {
             self.trial_timer.invalidate()
+            self.test_data.trial_time_list.append(5000)
             counter_view!.text! = String(5000)
             self.trial_state = .Inactive
             
@@ -124,11 +124,13 @@ class PVTViewController: UIViewController {
             self.current_trial_time = currentTimeMillis()
             self.trial_timer.invalidate()
             self.trial_state = .Inactive
+            self.test_data.trial_time_list.append(self.current_trial_time - self.start_trial_time)
             counter_view!.text! = String(self.current_trial_time - self.start_trial_time)
             
         default:
             counter_view!.text! = "FALSE START!!"
-            print("False Start")
+            test_data.num_fs += 1
+            print("False Start" + test_data.data_as_string)
             self.trial_countdown_timer.invalidate()
             self.trial_state = .Inactive
         }

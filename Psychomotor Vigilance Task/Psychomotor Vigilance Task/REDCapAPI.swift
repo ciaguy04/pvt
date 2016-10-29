@@ -26,7 +26,10 @@ func getURL (_ url:String){
 
 func postToURL (_ url:String){
     
-    let data : [String: Any] = ["record": "1,2", "field_name":"pvt_data", "value":[1,2,3,4], "redcap_event_name": "post_night_2_pvt_arm_1"]
+    let data : [String: Any] = ["record": "1,2",
+                                "field_name":"pvt_data",
+                                "value":[1,2,3,4],
+                                "redcap_event_name": "post_night_2_pvt_arm_1"]              //TODO: make # of event name mutable
     let jsonString = "[ \(JSON(data))" + "]"
     print(jsonString)
     
@@ -39,7 +42,7 @@ func postToURL (_ url:String){
         "overwriteBehavior": "normal",
         "data": jsonString,
         "returnContent": "count",
-        "returnFormat": "json"
+        "returnFormat": "json"              //TODO: will need to add the DateTime format argument (currently proposed format: 2016-10-29)
     ]
     
     Alamofire.request(url , method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
