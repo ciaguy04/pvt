@@ -24,15 +24,26 @@ func getURL (_ url:String){
     }
 }
 
-func postToURL (_ url:String){
+func postToURL (withData data:[String:Any], andContext context:[String:Any]){
+    var jsonString = "["
     
-    let data : [String: Any] = ["record": "1,2",
-                                "field_name":"pvt_data",
-                                "value":[1,2,3,4],
-                                "redcap_event_name": "post_night_2_pvt_arm_1"]              //TODO: make # of event name mutable
-    let jsonString = "[ \(JSON(data))" + "]"
+    
+    //TODO: keys in data (below) should be hardcoded, values passed as dict: [String:Any]-> for each key, take elements and add to data dictionary -> append jsonString with dict
+
+    for (key, value) in data{
+        let jsonData : [String:Any] = ["record": context["record"] as! String,
+                                       "redcap_event_name": context["event_name"] as! String,
+                                       "field_name": key,
+                                       "value": value]
+        jsonString += "\(JSON(jsonData)),"
+    }
+    
+    
+    jsonString.remove(at: jsonString.index(before: jsonString.endIndex))
+    jsonString.insert("]", at:jsonString.endIndex)
     print(jsonString)
-    
+
+//Comment to avoid API calls during debugging above code -
     let parameters: Parameters =
         
     [   "token": TOKEN,
@@ -42,10 +53,10 @@ func postToURL (_ url:String){
         "overwriteBehavior": "normal",
         "data": jsonString,
         "returnContent": "count",
-        "returnFormat": "json"              //TODO: will need to add the DateTime format argument (currently proposed format: 2016-10-29)
+        "returnFormat": "json"              //TODO: may need to add the DateTime format argument (currently proposed format: 2016-10-29)
     ]
     
-    Alamofire.request(url , method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
+    Alamofire.request("https://redcap.vanderbilt.edu/api/", method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
         
         print("request: \(response.request)")
         print("response: \(response.response)")
@@ -56,4 +67,6 @@ func postToURL (_ url:String){
             print("JSON: \(JSON)")
         }
     }
+//end comment
+
 }

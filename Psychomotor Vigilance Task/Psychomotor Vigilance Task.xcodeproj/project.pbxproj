@@ -17,6 +17,7 @@
 		65435DB21DC2C0C600C334F8 /* Psychomotor_Vigilance_TaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65435DB11DC2C0C600C334F8 /* Psychomotor_Vigilance_TaskUITests.swift */; };
 		65435DC01DC2C1F000C334F8 /* PVTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65435DBF1DC2C1F000C334F8 /* PVTViewController.swift */; };
 		65744AF81DC4FA3F00408084 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65744AF71DC4FA3F00408084 /* Secrets.swift */; };
+		65744AFA1DC4FF4800408084 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65744AF91DC4FF4800408084 /* Context.swift */; };
 		658A10981DC2D4B800250600 /* REDCapAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658A10971DC2D4B800250600 /* REDCapAPI.swift */; };
 		65BCAD431DC4544700A2A223 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BCAD421DC4544700A2A223 /* Test.swift */; };
 		90BA660C0C1BBA779BF6D5FE /* Pods_Psychomotor_Vigilance_Task.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1986C9DC198E833FFF1C0048 /* Pods_Psychomotor_Vigilance_Task.framework */; };
@@ -58,6 +59,7 @@
 		65435DB31DC2C0C600C334F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65435DBF1DC2C1F000C334F8 /* PVTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVTViewController.swift; sourceTree = "<group>"; };
 		65744AF71DC4FA3F00408084 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		65744AF91DC4FF4800408084 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		658A10971DC2D4B800250600 /* REDCapAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = REDCapAPI.swift; sourceTree = "<group>"; };
 		65BCAD421DC4544700A2A223 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		92869A8593361F9997A2A118 /* Pods-Psychomotor Vigilance Task.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psychomotor Vigilance Task.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Psychomotor Vigilance Task/Pods-Psychomotor Vigilance Task.debug.xcconfig"; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				658A10971DC2D4B800250600 /* REDCapAPI.swift */,
 				65BCAD421DC4544700A2A223 /* Test.swift */,
 				65744AF71DC4FA3F00408084 /* Secrets.swift */,
+				65744AF91DC4FF4800408084 /* Context.swift */,
 			);
 			path = "Psychomotor Vigilance Task";
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				65744AF81DC4FA3F00408084 /* Secrets.swift in Sources */,
 				65BCAD431DC4544700A2A223 /* Test.swift in Sources */,
 				65435D971DC2C0C500C334F8 /* Psychomotor_Vigilance_Task.xcdatamodeld in Sources */,
+				65744AFA1DC4FF4800408084 /* Context.swift in Sources */,
 				65435DC01DC2C1F000C334F8 /* PVTViewController.swift in Sources */,
 				658A10981DC2D4B800250600 /* REDCapAPI.swift in Sources */,
 			);

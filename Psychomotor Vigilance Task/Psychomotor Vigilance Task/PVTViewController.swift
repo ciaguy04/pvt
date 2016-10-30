@@ -40,7 +40,6 @@ class PVTViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
     }
     
@@ -88,6 +87,7 @@ class PVTViewController: UIViewController {
             
         } else {
             self.test_state_timer.invalidate()
+            self.test_data.send_data_dict()
             counter_view!.text! = "The test has ended.  Thanks!"
         }
         
