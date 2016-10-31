@@ -20,6 +20,7 @@
 		65744AFA1DC4FF4800408084 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65744AF91DC4FF4800408084 /* Context.swift */; };
 		658A10981DC2D4B800250600 /* REDCapAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658A10971DC2D4B800250600 /* REDCapAPI.swift */; };
 		65BCAD431DC4544700A2A223 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BCAD421DC4544700A2A223 /* Test.swift */; };
+		65ECF5F41DC7917900EB07EF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ECF5F31DC7917900EB07EF /* SettingsViewController.swift */; };
 		90BA660C0C1BBA779BF6D5FE /* Pods_Psychomotor_Vigilance_Task.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1986C9DC198E833FFF1C0048 /* Pods_Psychomotor_Vigilance_Task.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		65744AF91DC4FF4800408084 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		658A10971DC2D4B800250600 /* REDCapAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = REDCapAPI.swift; sourceTree = "<group>"; };
 		65BCAD421DC4544700A2A223 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		65ECF5F31DC7917900EB07EF /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		92869A8593361F9997A2A118 /* Pods-Psychomotor Vigilance Task.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psychomotor Vigilance Task.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Psychomotor Vigilance Task/Pods-Psychomotor Vigilance Task.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +135,7 @@
 		65435D8D1DC2C0C500C334F8 /* Psychomotor Vigilance Task */ = {
 			isa = PBXGroup;
 			children = (
+				65ECF5F31DC7917900EB07EF /* SettingsViewController.swift */,
 				65435D8E1DC2C0C500C334F8 /* AppDelegate.swift */,
 				65435D901DC2C0C500C334F8 /* ViewController.swift */,
 				65435DC11DC2CB3700C334F8 /* Supporting Files */,
@@ -368,6 +371,7 @@
 				65744AFA1DC4FF4800408084 /* Context.swift in Sources */,
 				65435DC01DC2C1F000C334F8 /* PVTViewController.swift in Sources */,
 				658A10981DC2D4B800250600 /* REDCapAPI.swift in Sources */,
+				65ECF5F41DC7917900EB07EF /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
