@@ -70,7 +70,7 @@ class PVTViewController: UIViewController {
     }
     
     @objc func start_trial_countdown(){
-        if currentTimeMillis() - self.start_pvt_time <= 180000 {
+        if currentTimeMillis() - self.start_pvt_time <= 10000 {
             print(String(currentTimeMillis() - self.start_pvt_time) + "ms into the test")               //caveman debugging tool
             switch self.trial_state{
             case .Inactive:
@@ -89,6 +89,7 @@ class PVTViewController: UIViewController {
             
         } else {
             self.test_state_timer.invalidate()
+            self.trial_countdown_timer.invalidate()
             self.test_data.send_data_dict()
             counter_view!.text! = "The test has ended.  Thanks!"
         }

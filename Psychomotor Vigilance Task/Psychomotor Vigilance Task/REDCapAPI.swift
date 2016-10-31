@@ -25,16 +25,13 @@ func getURL (_ url:String){
 }
 
 func postToURL (withData data:[String:Any], andContext context:[String:Any]){
-    var jsonString = "["
-    
-    
-    //TODO: keys in data (below) should be hardcoded, values passed as dict: [String:Any]-> for each key, take elements and add to data dictionary -> append jsonString with dict
+    var jsonString = ""
 
     for (key, value) in data{
-        let jsonData : [String:Any] = ["record": context["record"] as! String,
-                                       "redcap_event_name": context["event_name"] as! String,
-                                       "field_name": key,
-                                       "value": value]
+        let jsonData : [String:Any] = ["records": context["record"] as! String,
+                                       "redcap_event_names": context["event_name"] as! String,
+                                       "field_names": key,
+                                       "values": value]
         jsonString += "\(JSON(jsonData)),"
     }
     
@@ -53,18 +50,33 @@ func postToURL (withData data:[String:Any], andContext context:[String:Any]){
         "overwriteBehavior": "normal",
         "data": jsonString,
         "returnContent": "count",
-        "returnFormat": "json"              //TODO: may need to add the DateTime format argument (currently proposed format: 2016-10-29)
+        "returnFormat": "json"
     ]
     
     Alamofire.request("https://redcap.vanderbilt.edu/api/", method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
+    
+    //TODO: consider adding more specific error handling prior to incrementing
+    /*
+         No internet: response.response == nil
+         + internet, badly formed request: response.result == .success
+         Successful submission: response.result.value's parsed JSON dict["count"] == 1
+         
+    */
+
+        print(response.debugDescription)
         
-        print("request: \(response.request)")
-        print("response: \(response.response)")
-        print("data: \(response.data)")
-        print("result: \(response.result)")
+        if response.response == nil {
+            print("An error has occurred.  Please check your internet connection.  If the error persists, please contact the study coordinator.")
+            //TODO: return to main screen +/- save PVT data to send at a later time.
+        }
         
-        if let JSON = response.result.value {
-            print("JSON: \(JSON)")
+        
+        if let rawJSONResponse = response.result.value {
+            if response.result.isSuccess && JSON(rawJSONResponse)["count"] == nil  {
+                print("Successfully captured failure!")
+                //TODO: Use Alamofire to send response.debugDescription to email via mailto:
+            }
+        
         }
     }
 //end comment
