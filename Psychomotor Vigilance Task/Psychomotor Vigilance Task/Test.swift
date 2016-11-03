@@ -40,7 +40,7 @@ class Test {
                 "start_time": self.start_time,
                 "trial_time_list": self.trial_time_list.description,
                 "num_fs": self.num_fs,
-                "pvt_data_complete": self.test_context.pvt_data_complete] as [String : Any]
+                "pvt_data_complete": self.test_context.PVT_DATA_COMPLETE] as [String : Any]
     }
     
     var context_dict: [String: Any] {

@@ -24,23 +24,21 @@ func getURL (_ url:String){
     }
 }
 
-func postToURL (withData data:[String:Any], andContext context:[String:Any]){
-    var jsonString = ""
-
+func postToURL (withData data:[String:Any], andContext context:[String:Any]) {
+    //building 'data' payload  within jsonString 
+    var jsonString = "["
     for (key, value) in data{
-        let jsonData : [String:Any] = ["records": context["record"] as! String,
-                                       "redcap_event_names": context["event_name"] as! String,
-                                       "field_names": key,
-                                       "values": value]
+        let jsonData : [String:Any] = ["record": context["record"] as! String,
+                                       "redcap_event_name": context["event_name"] as! String,
+                                       "field_name": key,
+                                       "value": value]
         jsonString += "\(JSON(jsonData)),"
     }
-    
-    
     jsonString.remove(at: jsonString.index(before: jsonString.endIndex))
     jsonString.insert("]", at:jsonString.endIndex)
     print(jsonString)
 
-//Comment to avoid API calls during debugging above code -
+    //Building headers for post method body - comment to avoid API calls during debugging above code -> see 'end comment'
     let parameters: Parameters =
         
     [   "token": TOKEN,
@@ -53,32 +51,29 @@ func postToURL (withData data:[String:Any], andContext context:[String:Any]){
         "returnFormat": "json"
     ]
     
+    //Calling API
     Alamofire.request("https://redcap.vanderbilt.edu/api/", method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
-    
-    //TODO: consider adding more specific error handling prior to incrementing
-    /*
-         No internet: response.response == nil
-         + internet, badly formed request: response.result == .success
-         Successful submission: response.result.value's parsed JSON dict["count"] == 1
-         
-    */
-
         print(response.debugDescription)
         
         if response.response == nil {
             print("An error has occurred.  Please check your internet connection.  If the error persists, please contact the study coordinator.")
             //TODO: return to main screen +/- save PVT data to send at a later time.
         }
-        
-        
         if let rawJSONResponse = response.result.value {
             if response.result.isSuccess && JSON(rawJSONResponse)["count"] == nil  {
                 print("Successfully captured failure!")
                 //TODO: Use Alamofire to send response.debugDescription to email via mailto:
             }
-        
+            if response.result.isSuccess && JSON(rawJSONResponse)["count"] != nil  {
+                print("Successfully submitted to REDCap")
+            }
+            
+             //-No internet: response.response == nil
+             //+ internet, badly formed request: response.result == .success
+             //Successful submission: response.result.value's parsed JSON dict["count"] == 1
+            //TODO: consider adding more specific error handling prior to incrementing
+            
         }
     }
 //end comment
-
 }

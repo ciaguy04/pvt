@@ -8,43 +8,82 @@
 
 import Foundation
 
+struct ContextKeys{
+    static let REDCap_record = "REDCap_record"
+    static let specialty = "specialty"
+    static let pvt_index = "pvt_index"
+}
+
+//TODO: Convert into a 'singleton facade' to encapsulate persistence
 class Context {
-    let pvt_data_complete = 1               //hardcoded value to denote '1' (unverified) status in REDCap Project
+    let PVT_DATA_COMPLETE = 1               //hardcoded value to denote '1' (unverified) status in REDCap Project
+    static let PVT_NAMES = ["pre_day_1",
+                     "post_day_1",
+                     "pre_day_2",
+                     "post_day_2",
+                     "pre_day_3",
+                     "post_day_3",
+                     "pre_day_4",
+                     "post_day_4",
+                     "pre_day_5",
+                     "post_day_5",
+                     "pre_day_6",
+                     "post_day_6",
+                     "pre_day_7",
+                     "post_day_7",
+                     "pre_night_1",
+                     "post_night_1",
+                     "pre_night_2",
+                     "post_night_2",
+                     "pre_night_3",
+                     "post_night_3",
+                     "pre_night_4",
+                     "post_night_4",
+                     "pre_night_5",
+                     "post_night_5"]
     
     //MARK: - Computed Properties
     var record: String {
-        let defaults = UserDefaults.standard
-        return defaults.string(forKey:"REDCap_record")!
+        get { let defaults = UserDefaults.standard
+            return defaults.string(forKey:ContextKeys.REDCap_record)!
+        } set {
+            let defaults = UserDefaults.standard
+            defaults.set(newValue, forKey: ContextKeys.REDCap_record)
+            print("record set to \(newValue)")
+        }
     }
     
     var arm: Int {
-        let defaults = UserDefaults.standard
-        return (defaults.integer(forKey:"specialty")+1)         //REDCap arm = (specialty index + 1).
+        get { let defaults = UserDefaults.standard
+            return defaults.integer(forKey:ContextKeys.specialty)
+        } set {
+            print("arm set to \(newValue)")
+            let defaults = UserDefaults.standard
+            defaults.set(newValue, forKey: ContextKeys.specialty)
+            defaults.synchronize()
+        }
     }
     
-    var pvt_index: Int {
-        let defaults = UserDefaults.standard
-        //
-        return defaults.integer(forKey: "pvt_index")            //return currently due pvt index
+    var pvt_index: Int {                              //currently due pvt_index
+        get { let defaults = UserDefaults.standard
+            return defaults.integer(forKey: ContextKeys.pvt_index)
+        } set {
+            print("newValue is \(newValue)")
+            let defaults = UserDefaults.standard
+            defaults.set(newValue, forKey: ContextKeys.pvt_index)
+            defaults.synchronize()
+        }
     }
-    
-    var pvt_name: String {
-        let defaults = UserDefaults.standard
-        let names = defaults.array(forKey: "pvt_event_names") as! Array<String>
-        return names[pvt_index]
-    }
-    
+
     var event_name: String {
-        return "pre_night_4" + "_pvt_arm_" + String(arm)                //debugging
-        //return self.pvt_name + "_pvt_arm_" + String(arm)            //redcap_event_name:  (pre | post)_(day | night)_[1-5]_pvt_arm_[1-3]
+        print (Context.PVT_NAMES[pvt_index] + "_pvt_arm_" + String(arm))                //debugging
+        return Context.PVT_NAMES[pvt_index] + "_pvt_arm_" + String(arm)
     }
     
     
-    init(){
-    }
-    
-    func increment_pvt(){
-        //increment pvt_index
-        //update user defaults
+
+    //MARK: -Methods
+    func increment_pvt_index(){
+        self.pvt_index += 1
     }
 }
