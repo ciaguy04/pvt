@@ -13,6 +13,7 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var pid: UITextField!
     @IBOutlet weak var specialty: UISegmentedControl!
+    @IBOutlet weak var invalid_pid_label: UILabel!
     
     var context: Context = Context()
     
@@ -52,9 +53,26 @@ class SettingsViewController: UIViewController {
     //MARK: - Actions
     
     //TODO: Add save to nav bar
-    @IBAction func save_settings_and_return(_ sender: Any) {
-        context.record = pid.text!                          //TODO: -Add Validation
+    
+
+    @IBAction func save_and_return(_ sender: Any) {
         context.arm = (specialty.selectedSegmentIndex + 1)  //REDCap arm =(specialty index+1).
+        
+        //pid validation
+        let pid_validation_int = Int(pid.text!)
+        if pid.text!.characters.count == 6 && pid_validation_int != nil {
+            context.record = pid.text!
+            presentingViewController!.dismiss(animated: false)
+        } else {
+            invalid_pid_label.text = "Please enter a valid ID!"
+        }
+        
+        
     }
+    
+    @IBAction func cancel_settings(_ sender: Any) {
+        presentingViewController!.dismiss(animated: false)
+    }
+    
 
 }

@@ -37,7 +37,7 @@ func postToURL (withData data:[String:Any], andContext context:[String:Any]) {
     jsonString.remove(at: jsonString.index(before: jsonString.endIndex))
     jsonString.insert("]", at:jsonString.endIndex)
     print(jsonString)
-
+/*
     //Building headers for post method body - comment to avoid API calls during debugging above code -> see 'end comment'
     let parameters: Parameters =
         
@@ -76,4 +76,5 @@ func postToURL (withData data:[String:Any], andContext context:[String:Any]) {
         }
     }
 //end comment
+ */
 }

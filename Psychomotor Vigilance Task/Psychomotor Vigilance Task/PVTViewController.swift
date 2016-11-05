@@ -91,7 +91,9 @@ class PVTViewController: UIViewController {
             self.test_state_timer.invalidate()
             self.trial_countdown_timer.invalidate()
             self.test_data.send_data_dict()
-            counter_view!.text! = "The test has ended.  Thanks!"
+            counter_view!.text! = "END TEST"
+            test_data.test_context.pvt_index += 1
+            presentingViewController!.dismiss(animated: false)
         }
         
         //start_trial()
@@ -137,7 +139,17 @@ class PVTViewController: UIViewController {
             self.trial_countdown_timer.invalidate()
             self.trial_state = .Inactive
         }
-    }    
+    }
+    
+    @IBAction func cancel_pvt(_ sender: Any) {
+        self.test_state_timer.invalidate()
+        self.trial_countdown_timer.invalidate()
+        self.trial_timer.invalidate()
+        presentingViewController!.dismiss(animated: false)
+        //TODO: - consider adding Test property that tracks # pvt's cancelled
+        //TODO: - consider removing 'Cancel' button -> add button's logic to handler for putting app in background
+    }
+    
 }
 
 enum TrialState {
