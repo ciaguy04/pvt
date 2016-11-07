@@ -22,6 +22,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             defaults.set(0, forKey: ContextKeys.pvt_index)
             defaults.synchronize()
         }
+        
+        if defaults.integer(forKey: ContextKeys.arm) == 0 {
+            print("setting arm")
+            defaults.set(1, forKey: ContextKeys.arm)
+            defaults.synchronize()
+        }
+        
+        if defaults.string(forKey: ContextKeys.REDCap_record) == nil {
+            print("setting ContextKeys.REDCap_record")
+            defaults.set("", forKey: ContextKeys.arm)
+            defaults.synchronize()
+        }
+        
         return true
     }
 

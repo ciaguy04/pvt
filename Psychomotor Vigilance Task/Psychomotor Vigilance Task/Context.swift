@@ -10,7 +10,7 @@ import Foundation
 
 struct ContextKeys{
     static let REDCap_record = "REDCap_record"              // aka pid
-    static let specialty = "specialty"                      // aka arm - 1
+    static let arm = "arm"                      // aka arm + 1
     static let pvt_index = "pvt_index"
 }
 
@@ -43,9 +43,9 @@ class Context {
                      "post_night_5"]
     
     //MARK: - Computed Properties
-    var record: String {
+    var record: String? {
         get { let defaults = UserDefaults.standard
-            return defaults.string(forKey:ContextKeys.REDCap_record)!
+            return defaults.string(forKey:ContextKeys.REDCap_record)
         } set {
             let defaults = UserDefaults.standard
             defaults.set(newValue, forKey: ContextKeys.REDCap_record)
@@ -55,11 +55,11 @@ class Context {
     
     var arm: Int {
         get { let defaults = UserDefaults.standard
-            return defaults.integer(forKey:ContextKeys.specialty)
+            return defaults.integer(forKey:ContextKeys.arm)
         } set {
             print("arm set to \(newValue)")
             let defaults = UserDefaults.standard
-            defaults.set(newValue, forKey: ContextKeys.specialty)
+            defaults.set(newValue, forKey: ContextKeys.arm)
             defaults.synchronize()
         }
     }

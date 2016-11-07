@@ -19,14 +19,17 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.pid.text = context.record
+        if let pid_text = context.record {
+            self.pid.text = pid_text
+        }
+        
         self.specialty.selectedSegmentIndex = context.arm - 1
 
         // #### Debugging code ########
         //let defaults = UserDefaults.standard
         //defaults.removeObject(forKey: ContextKeys.pvt_index)
         //defaults.removeObject(forKey: ContextKeys.REDCap_record)
-        //defaults.removeObject(forKey: ContextKeys.specialty)
+        //defaults.removeObject(forKey: ContextKeys.arm)
         //defaults.synchronize()
         //print(defaults.dictionaryRepresentation().debugDescription)
        

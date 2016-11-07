@@ -44,7 +44,7 @@ class Test {
     }
     
     var context_dict: [String: Any] {
-        return ["record": self.test_context.record,
+        return ["record": self.test_context.record!,
                 "event_name": self.test_context.event_name] as [String: Any]
     }
     
@@ -59,7 +59,7 @@ class Test {
     }
     
     func send_data_dict() {
-        postToURL(withData:self.data_dict, andContext: self.context_dict)
+        REDCapAPI.postToURL(withData:self.data_dict, andContext: self.context_dict)
     }
     
 /* Data that needs to be sent:
