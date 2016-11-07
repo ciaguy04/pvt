@@ -17,6 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let defaults = UserDefaults.standard
+        if defaults.integer(forKey: ContextKeys.pvt_index) == 0 {
+            defaults.set(0, forKey: ContextKeys.pvt_index)
+            defaults.synchronize()
+        }
         return true
     }
 

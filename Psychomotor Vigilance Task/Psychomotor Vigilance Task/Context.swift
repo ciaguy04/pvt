@@ -9,12 +9,12 @@
 import Foundation
 
 struct ContextKeys{
-    static let REDCap_record = "REDCap_record"
-    static let specialty = "specialty"
+    static let REDCap_record = "REDCap_record"              // aka pid
+    static let specialty = "specialty"                      // aka arm - 1
     static let pvt_index = "pvt_index"
 }
 
-//TODO: Convert into a 'singleton facade' to encapsulate persistence
+//TODO: - Convert into a 'singleton facade' to encapsulate persistence
 class Context {
     let PVT_DATA_COMPLETE = 1               //hardcoded value to denote '1' (unverified) status in REDCap Project
     static let PVT_NAMES = ["pre_day_1",

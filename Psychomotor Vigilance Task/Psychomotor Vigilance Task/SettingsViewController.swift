@@ -24,8 +24,9 @@ class SettingsViewController: UIViewController {
 
         // #### Debugging code ########
         //let defaults = UserDefaults.standard
-        //defaults.removeObject(forKey: "pvt_event_names")
-        //defaults.removeObject(forKey: "pvt_index")
+        //defaults.removeObject(forKey: ContextKeys.pvt_index)
+        //defaults.removeObject(forKey: ContextKeys.REDCap_record)
+        //defaults.removeObject(forKey: ContextKeys.specialty)
         //defaults.synchronize()
         //print(defaults.dictionaryRepresentation().debugDescription)
        
