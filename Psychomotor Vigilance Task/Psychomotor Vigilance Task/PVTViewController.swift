@@ -11,6 +11,10 @@ import UIKit
 import CoreData
 import Alamofire
 
+//enum TestStatus {
+//    case Success: String = "Successfully submitted to RED Cap!"
+//}
+
 
 class PVTViewController: UIViewController {
     
@@ -26,6 +30,7 @@ class PVTViewController: UIViewController {
     var current_trial_time: Int64           //used to compare current time to start_trial_time
     var start_pvt_time: Int64               //use this variable to track when 3 minutes are up
     var test_data: Test
+//    var test_sent_success: Test
     
     
     //MARK: Initializer
@@ -158,16 +163,6 @@ class PVTViewController: UIViewController {
             self.trial_state = .Inactive
         }
     }
-    
-    @IBAction func cancel_pvt(_ sender: Any) {
-        self.test_state_timer.invalidate()
-        self.trial_countdown_timer.invalidate()
-        self.trial_timer.invalidate()
-        presentingViewController!.dismiss(animated: false)
-        //TODO: - consider adding Test property that tracks # pvt's cancelled
-        //TODO: - consider removing 'Cancel' button -> add button's logic to handler for putting app in background
-    }
-    
 }
 
 enum TrialState {

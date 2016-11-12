@@ -106,14 +106,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pdv-fX-GbS">
-                                <rect key="frame" x="144" y="290" width="86" height="29"/>
+                                <rect key="frame" x="144" y="134" width="86" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.90056573279999996" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Home">
                                     <color key="titleColor" red="1" green="0.07482077878" blue="0.053801445959999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="navigate_home:" destination="sJF-jl-bBl" eventType="touchUpInside" id="0OL-5U-2rm"/>
+                                    <action selector="navigate_home:" destination="sJF-jl-bBl" eventType="touchUpInside" id="cg4-94-ROf"/>
                                 </connections>
                             </button>
                         </subviews>

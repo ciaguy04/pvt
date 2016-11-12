@@ -35,8 +35,9 @@ class TestResultVC: UIViewController {
     //MARK: - Actions
     
     @IBAction func navigate_home(_ sender: Any) {
-        presentingViewController!.dismiss(animated: true)
+        navigationController!.popToRootViewController(animated: true)
     }
+
     
 
 }

@@ -112,15 +112,45 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6510B57B1DD52EB7002A4E14 /* VCs */ = {
+		651014841DD69D58000D2E68 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				65BCAD421DC4544700A2A223 /* Test.swift */,
+				65744AF91DC4FF4800408084 /* Context.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		651014851DD69D9F000D2E68 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				65744AF71DC4FA3F00408084 /* Secrets.swift */,
+				658A10971DC2D4B800250600 /* REDCapAPI.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		651014861DD69F89000D2E68 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				65435D981DC2C0C500C334F8 /* Assets.xcassets */,
+				65435D9A1DC2C0C500C334F8 /* LaunchScreen.storyboard */,
+				65435D9D1DC2C0C500C334F8 /* Info.plist */,
+				65435D951DC2C0C500C334F8 /* Psychomotor_Vigilance_Task.xcdatamodeld */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		6510B57B1DD52EB7002A4E14 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				65435D8E1DC2C0C500C334F8 /* AppDelegate.swift */,
 				65ECF5F31DC7917900EB07EF /* SettingsViewController.swift */,
 				65435D901DC2C0C500C334F8 /* ViewController.swift */,
 				65435DBF1DC2C1F000C334F8 /* PVTViewController.swift */,
 				6510B57C1DD52ED6002A4E14 /* TestResultVC.swift */,
 			);
-			name = VCs;
+			name = Control;
 			sourceTree = "<group>";
 		};
 		65435D821DC2C0C500C334F8 = {
@@ -148,13 +178,10 @@
 		65435D8D1DC2C0C500C334F8 /* Psychomotor Vigilance Task */ = {
 			isa = PBXGroup;
 			children = (
-				6510B57B1DD52EB7002A4E14 /* VCs */,
-				65435D8E1DC2C0C500C334F8 /* AppDelegate.swift */,
 				65435DC11DC2CB3700C334F8 /* Supporting Files */,
-				658A10971DC2D4B800250600 /* REDCapAPI.swift */,
-				65BCAD421DC4544700A2A223 /* Test.swift */,
-				65744AF71DC4FA3F00408084 /* Secrets.swift */,
-				65744AF91DC4FF4800408084 /* Context.swift */,
+				651014841DD69D58000D2E68 /* Model */,
+				6510B57B1DD52EB7002A4E14 /* Control */,
+				651014851DD69D9F000D2E68 /* Utilities */,
 			);
 			path = "Psychomotor Vigilance Task";
 			sourceTree = "<group>";
@@ -181,10 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				65435D921DC2C0C500C334F8 /* Main.storyboard */,
-				65435D981DC2C0C500C334F8 /* Assets.xcassets */,
-				65435D9A1DC2C0C500C334F8 /* LaunchScreen.storyboard */,
-				65435D9D1DC2C0C500C334F8 /* Info.plist */,
-				65435D951DC2C0C500C334F8 /* Psychomotor_Vigilance_Task.xcdatamodeld */,
+				651014861DD69F89000D2E68 /* Other */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
