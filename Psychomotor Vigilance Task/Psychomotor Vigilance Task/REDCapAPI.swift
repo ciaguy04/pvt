@@ -10,11 +10,6 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-enum REDCapAPIError: Error {
-    case no_connectivity
-    case api_call_error
-}
-
 class REDCapAPI {
     
     static let manager: Alamofire.SessionManager = {
@@ -46,7 +41,7 @@ class REDCapAPI {
         }
     }
 
-    static func postToURL (withData data:[String:Any], andContext context:[String:Any]) {
+    static func postToURL (withData data:[String:Any], andContext context:[String:Any], fromCaller caller: Any) {
         //building 'data' payload  within jsonString 
         var jsonString = "["
         for (key, value) in data{
@@ -80,15 +75,18 @@ class REDCapAPI {
             
             if response.response == nil {
                 print("An error has occurred.  Please check your internet connection.  If the error persists, please contact the study coordinator.")
+                (caller as! PVTViewController).submission_status = SubmissionStatus.no_connectivity
                 //TODO: return to main screen +/- save PVT data to send at a later time.
             }
             if let rawJSONResponse = response.result.value {
                 if response.result.isSuccess && JSON(rawJSONResponse)["count"] == nil  {
-                    print("Successfully captured failure!")
+                    print("API Call Error")
+                    (caller as! PVTViewController).submission_status = SubmissionStatus.api_call_error
                     //TODO: Use Alamofire to send response.debugDescription to email via mailto:
                 }
                 if response.result.isSuccess && JSON(rawJSONResponse)["count"] != nil  {
                     print("Successfully submitted to REDCap")
+                    (caller as! PVTViewController).submission_status = SubmissionStatus.success
                 }
                 
                  //-No internet: response.response == nil

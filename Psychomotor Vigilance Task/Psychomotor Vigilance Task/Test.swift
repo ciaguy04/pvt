@@ -57,24 +57,6 @@ class Test {
         self.test_context = Context()
         
     }
-    
-    func send_data_dict() {
-        REDCapAPI.postToURL(withData:self.data_dict, andContext: self.context_dict)
-    }
-    
-/* Data that needs to be sent:
-
-    Data Elements:
-    start_datetime
-    trial_time_list
-    num_fs
-    pvt_data_complete -> set to '1' (unverified)
- 
-    Context Elements:
-    record
-    redcap_event_name:  (pre | post)_(day | night)_[1-5]_pvt_arm_[1-3]
- 
-*/
 
 
     

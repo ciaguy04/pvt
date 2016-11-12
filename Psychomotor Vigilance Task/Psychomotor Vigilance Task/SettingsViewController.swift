@@ -24,14 +24,6 @@ class SettingsViewController: UIViewController {
         }
         
         self.specialty.selectedSegmentIndex = context.arm - 1
-
-        // #### Debugging code ########
-        //let defaults = UserDefaults.standard
-        //defaults.removeObject(forKey: ContextKeys.pvt_index)
-        //defaults.removeObject(forKey: ContextKeys.REDCap_record)
-        //defaults.removeObject(forKey: ContextKeys.arm)
-        //defaults.synchronize()
-        //print(defaults.dictionaryRepresentation().debugDescription)
        
 
         
@@ -58,7 +50,14 @@ class SettingsViewController: UIViewController {
     
     //TODO: Add save to nav bar
     
-
+    @IBAction func reset_pvt_index(_ sender: Any) {
+        //#### Debugging code ########
+        print("Successfully pressed")
+        context.pvt_index = 0
+        navigationController!.popToRootViewController(animated: true)
+    }
+    
+    
     @IBAction func save_and_return(_ sender: Any) {
         context.arm = (specialty.selectedSegmentIndex + 1)  //REDCap arm =(specialty index+1).
         
@@ -66,17 +65,9 @@ class SettingsViewController: UIViewController {
         let pid_validation_int = Int(pid.text!)
         if pid.text!.characters.count == 6 && pid_validation_int != nil {
             context.record = pid.text!
-            presentingViewController!.dismiss(animated: false)
+            navigationController!.popToRootViewController(animated: true)
         } else {
             invalid_pid_label.text = "Please enter a valid ID!"
         }
-        
-        
     }
-    
-    @IBAction func cancel_settings(_ sender: Any) {
-        presentingViewController!.dismiss(animated: false)
-    }
-    
-
 }
