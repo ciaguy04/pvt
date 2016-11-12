@@ -51,6 +51,12 @@ class PVTViewController: UIViewController {
         self.test_state_timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(start_trial_countdown), userInfo: nil, repeats: true)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.test_state_timer.invalidate()
+        self.trial_countdown_timer.invalidate()
+        self.trial_timer.invalidate()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -93,10 +99,22 @@ class PVTViewController: UIViewController {
             self.test_data.send_data_dict()
             counter_view!.text! = "END TEST"
             test_data.test_context.pvt_index += 1
-            presentingViewController!.dismiss(animated: false)
+            show_end_test_alert()
+            
         }
         
         //start_trial()
+    }
+    
+    func show_end_test_alert () {
+        let message = "You've finished the test."
+        let alert = UIAlertController(title: "Test Completed", message: message, preferredStyle: .alert)
+        let default_action = UIAlertAction(title: "OK", style: .default) {
+            _ in
+            self.performSegue(withIdentifier: "TestResultVC", sender: nil)
+        }
+        alert.addAction(default_action)
+        self.present(alert, animated: true, completion: nil)
     }
     
     @objc func start_trial(){

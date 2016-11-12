@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3da-Za-wcd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Psychomotor_Vigilance_Task" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,42 +18,9 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="kX9-F3-lSC">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" red="1" green="0.93269016056147891" blue="0.10398463478130282" alpha="1" colorSpace="calibratedRGB"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Home" id="NFj-LI-HIy">
-                                        <barButtonItem key="leftBarButtonItem" title="Settings" id="8Zh-Vi-TCu">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1pV-t6-r5y">
-                                                <rect key="frame" x="16" y="7" width="57" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                                <state key="normal" title="Settings">
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment content="Settings">
-                                                            <attributes>
-                                                                <color key="NSColor" red="1" green="0.93269016059999998" blue="0.1039846348" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <font key="NSFont" metaFont="system" size="15"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                    <color key="titleColor" red="1" green="0.93269016059999998" blue="0.1039846348" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="VtE-sG-nI8" kind="presentation" id="zy4-4g-cby"/>
-                                                </connections>
-                                            </button>
-                                            <color key="tintColor" red="1" green="0.93269016059999998" blue="0.1039846348" alpha="1" colorSpace="calibratedRGB"/>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5RU-CL-3tI">
                                 <rect key="frame" x="134" y="138" width="106" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -63,27 +30,37 @@
                                     <color key="titleColor" red="1" green="0.07482077878" blue="0.053801445959999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="fu8-vx-0M5" kind="presentation" id="FPp-BB-07b"/>
+                                    <segue destination="fu8-vx-0M5" kind="show" id="FPp-BB-07b"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.16861122846603394" green="0.16863656044006348" blue="0.16860261559486389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="1" green="0.93269016059999998" blue="0.1039846348" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Settings" id="gz9-ci-XAe">
+                            <color key="tintColor" red="1" green="0.07482077878" blue="0.053801445959999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="VtE-sG-nI8" kind="show" id="DIE-V4-EH1"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Home" id="xwA-3O-fg1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
+            <point key="canvasLocation" x="1056.8" y="122.78860569715144"/>
         </scene>
-        <!--View Controller-->
+        <!--PVT-->
         <scene sceneID="BBn-dG-lOT">
             <objects>
-                <viewController id="fu8-vx-0M5" customClass="PVTViewController" customModule="Psychomotor_Vigilance_Task" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="PVT" id="fu8-vx-0M5" customClass="PVTViewController" customModule="Psychomotor_Vigilance_Task" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AOh-OP-f1A"/>
                         <viewControllerLayoutGuide type="bottom" id="Ck2-IQ-YrP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Fhj-8C-fZ3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZK-M3-KaA" userLabel="Counter View">
@@ -94,23 +71,6 @@
                                 <color key="textColor" red="1" green="0.07482077878" blue="0.053801445959999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="JgX-cp-p5n">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" red="1" green="0.93269016059999998" blue="0.1039846348" alpha="1" colorSpace="calibratedRGB"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="PVT" id="0v9-PM-nND">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="bF7-I8-Dgw">
-                                            <color key="tintColor" red="1" green="0.93269016059999998" blue="0.1039846348" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <action selector="cancel_pvt:" destination="fu8-vx-0M5" id="jnx-BT-vPB"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
@@ -118,8 +78,10 @@
                             <outletCollection property="gestureRecognizers" destination="a2g-v4-iEY" appends="YES" id="pjJ-wY-3zz"/>
                         </connections>
                     </view>
+                    <toolbarItems/>
                     <connections>
                         <outlet property="counter_view" destination="BZK-M3-KaA" id="TRB-KD-yAY"/>
+                        <segue destination="sJF-jl-bBl" kind="show" identifier="TestResultVC" id="ZOD-8l-ETj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mnS-as-sHY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -129,18 +91,49 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1005.6" y="121.88905547226388"/>
+            <point key="canvasLocation" x="1944.8" y="122.78860569715144"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Test Result-->
+        <scene sceneID="7mz-jn-TJB">
+            <objects>
+                <viewController title="Test Result" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sJF-jl-bBl" customClass="TestResultVC" customModule="Psychomotor_Vigilance_Task" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4HN-8E-wcV"/>
+                        <viewControllerLayoutGuide type="bottom" id="izA-re-sM4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mak-KP-RX9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pdv-fX-GbS">
+                                <rect key="frame" x="144" y="290" width="86" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.90056573279999996" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Home">
+                                    <color key="titleColor" red="1" green="0.07482077878" blue="0.053801445959999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="navigate_home:" destination="sJF-jl-bBl" eventType="touchUpInside" id="0OL-5U-2rm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wfn-ve-MYf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2788" y="122.78860569715144"/>
+        </scene>
+        <!--Settings-->
         <scene sceneID="Qee-cT-iDi">
             <objects>
-                <viewController id="VtE-sG-nI8" customClass="SettingsViewController" customModule="Psychomotor_Vigilance_Task" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Settings" id="VtE-sG-nI8" customClass="SettingsViewController" customModule="Psychomotor_Vigilance_Task" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pMN-eG-aZK"/>
                         <viewControllerLayoutGuide type="bottom" id="zmX-iN-hDW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fKf-yJ-Y4O">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K7o-p8-uJJ">
@@ -168,29 +161,6 @@
                                 </segments>
                                 <color key="tintColor" red="1" green="0.93269016059999998" blue="0.1039846348" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="l2P-GS-zD5">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" red="1" green="0.93269016059999998" blue="0.1039846348" alpha="1" colorSpace="calibratedRGB"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Settings" id="yeZ-Wh-hth">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="LYU-db-mnO">
-                                            <color key="tintColor" red="1" green="0.93269016059999998" blue="0.1039846348" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <action selector="cancel_settings:" destination="VtE-sG-nI8" id="Oky-2B-DBE"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Iin-GV-Agc">
-                                            <color key="tintColor" red="1" green="0.93269016059999998" blue="0.1039846348" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <action selector="save_and_return:" destination="VtE-sG-nI8" id="YGO-sA-MOY"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6U-E9-0Sd">
                                 <rect key="frame" x="64" y="173" width="245" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -201,6 +171,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.16861122846603394" green="0.16863656044006348" blue="0.16860261559486389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="invalid_pid_label" destination="N6U-E9-0Sd" id="14x-Rm-Sb5"/>
                         <outlet property="pid" destination="K7o-p8-uJJ" id="zHG-iv-mVs"/>
@@ -210,6 +181,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j0H-Pu-aCL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1005.6" y="-687.7061469265368"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nif-N8-yLK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="3da-Za-wcd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="qy7-oi-HXv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="0.93269016059999998" blue="0.1039846348" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                            <color key="textColor" red="1" green="0.93269016059999998" blue="0.1039846348" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textShadowColor" red="1" green="0.93269016059999998" blue="0.1039846348" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="n8o-wX-2Qa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3g2-nR-iUx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="183" y="123"/>
         </scene>
     </scenes>
 </document>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6510B57D1DD52ED6002A4E14 /* TestResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6510B57C1DD52ED6002A4E14 /* TestResultVC.swift */; };
 		65435D8F1DC2C0C500C334F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65435D8E1DC2C0C500C334F8 /* AppDelegate.swift */; };
 		65435D911DC2C0C500C334F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65435D901DC2C0C500C334F8 /* ViewController.swift */; };
 		65435D941DC2C0C500C334F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65435D921DC2C0C500C334F8 /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		1986C9DC198E833FFF1C0048 /* Pods_Psychomotor_Vigilance_Task.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Psychomotor_Vigilance_Task.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		472C0DDCF92762B2028A5DF7 /* Pods-Psychomotor Vigilance Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psychomotor Vigilance Task.release.xcconfig"; path = "Pods/Target Support Files/Pods-Psychomotor Vigilance Task/Pods-Psychomotor Vigilance Task.release.xcconfig"; sourceTree = "<group>"; };
+		6510B57C1DD52ED6002A4E14 /* TestResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestResultVC.swift; sourceTree = "<group>"; };
 		65435D8B1DC2C0C500C334F8 /* Psychomotor Vigilance Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Psychomotor Vigilance Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65435D8E1DC2C0C500C334F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65435D901DC2C0C500C334F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +112,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6510B57B1DD52EB7002A4E14 /* VCs */ = {
+			isa = PBXGroup;
+			children = (
+				65ECF5F31DC7917900EB07EF /* SettingsViewController.swift */,
+				65435D901DC2C0C500C334F8 /* ViewController.swift */,
+				65435DBF1DC2C1F000C334F8 /* PVTViewController.swift */,
+				6510B57C1DD52ED6002A4E14 /* TestResultVC.swift */,
+			);
+			name = VCs;
+			sourceTree = "<group>";
+		};
 		65435D821DC2C0C500C334F8 = {
 			isa = PBXGroup;
 			children = (
@@ -135,11 +148,9 @@
 		65435D8D1DC2C0C500C334F8 /* Psychomotor Vigilance Task */ = {
 			isa = PBXGroup;
 			children = (
-				65ECF5F31DC7917900EB07EF /* SettingsViewController.swift */,
+				6510B57B1DD52EB7002A4E14 /* VCs */,
 				65435D8E1DC2C0C500C334F8 /* AppDelegate.swift */,
-				65435D901DC2C0C500C334F8 /* ViewController.swift */,
 				65435DC11DC2CB3700C334F8 /* Supporting Files */,
-				65435DBF1DC2C1F000C334F8 /* PVTViewController.swift */,
 				658A10971DC2D4B800250600 /* REDCapAPI.swift */,
 				65BCAD421DC4544700A2A223 /* Test.swift */,
 				65744AF71DC4FA3F00408084 /* Secrets.swift */,
@@ -364,6 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65435D911DC2C0C500C334F8 /* ViewController.swift in Sources */,
+				6510B57D1DD52ED6002A4E14 /* TestResultVC.swift in Sources */,
 				65435D8F1DC2C0C500C334F8 /* AppDelegate.swift in Sources */,
 				65744AF81DC4FA3F00408084 /* Secrets.swift in Sources */,
 				65BCAD431DC4544700A2A223 /* Test.swift in Sources */,
