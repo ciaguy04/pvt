@@ -11,9 +11,11 @@ import ScrollableGraphView
 
 class TestResultVC: UIViewController {
     
-    //MARK: - Outlets / Properties
+    //MARK: - Outlets
     @IBOutlet weak var test_label: UILabel!
     @IBOutlet weak var submission_pending: UIActivityIndicatorView!
+    
+    //MARK: - Properties
     private var _pvtvc: PVTViewController?
     private var status_update_timer = Timer()
 //    private var _pvtvc_dict: [String: Any]?
@@ -60,7 +62,6 @@ class TestResultVC: UIViewController {
         initialize_activity_indicator()
         self.status_update_timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(update_status), userInfo: nil, repeats: true)
         
-        
 //        let graphView = ScrollableGraphView(frame: CGRect(x:80, y:100, width: 250, height: 400))
 //        let labels = [1...pvtvc_trial_time_list.count]
 //        graphView.set(data: intArray_to_dubArray(pvtvc_trial_time_list), withLabels: ["1", "2", "3", "4", "5"])
@@ -86,7 +87,7 @@ class TestResultVC: UIViewController {
     }
     */
     
-    // MARK: - Custom
+    // MARK: - Custom VC Methods
 //    func intArray_to_dubArray(_ intArray: [Int]) -> [Double] {
 //        var dubArray: [Double] = []
 //        for i in intArray {
@@ -102,7 +103,7 @@ class TestResultVC: UIViewController {
                 self.test_label.text! = status.rawValue
                 self.test_label.textColor = UIColor.green
                 self.status_update_timer.invalidate()
-                self.pvtvc.test_data.test_context.pvt_index += 1
+                self.pvtvc.test_data.test_context.increment_pvt_index()
             } else {
                 self.test_label.text! = status.rawValue
                 self.test_label.textColor = UIColor.red

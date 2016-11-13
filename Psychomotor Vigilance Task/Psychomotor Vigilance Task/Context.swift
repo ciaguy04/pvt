@@ -9,8 +9,8 @@
 import Foundation
 
 struct ContextKeys{
-    static let REDCap_record = "REDCap_record"              // aka pid
-    static let arm = "arm"                      // aka arm + 1
+    static let REDCap_record = "REDCap_record"          // aka pid
+    static let arm = "arm"                              // aka specialty + 1
     static let pvt_index = "pvt_index"
 }
 
@@ -80,8 +80,6 @@ class Context {
         return Context.PVT_NAMES[pvt_index] + "_pvt_arm_" + String(arm)
     }
     
-    
-
     //MARK: -Methods
     func increment_pvt_index(){
         self.pvt_index += 1

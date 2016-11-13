@@ -47,17 +47,11 @@ class Test {
         return ["record": self.test_context.record!,
                 "event_name": self.test_context.event_name] as [String: Any]
     }
-    
-    
-    
+ 
     init(){
         self.start_datetime = Date()
         self.trial_time_list = []
         self.num_fs = 0
         self.test_context = Context()
-        
     }
-
-
-    
 }

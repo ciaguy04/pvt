@@ -13,13 +13,10 @@ import SwiftyJSON
 class REDCapAPI {
     
     static let manager: Alamofire.SessionManager = {
-        
         let serverTrustPolicy = ServerTrustPolicy.performDefaultEvaluation(validateHost: true)
         let serverTrustPolicies: [String: ServerTrustPolicy] = ["redcap.vanderbilt.edu": serverTrustPolicy ]
-        
         let configuration = URLSessionConfiguration.default
         configuration.httpAdditionalHeaders = Alamofire.SessionManager.defaultHTTPHeaders
-        
         return Alamofire.SessionManager(
             configuration: configuration,
             serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies)
@@ -37,7 +34,6 @@ class REDCapAPI {
             if let JSON = response.result.value {
                 print("JSON: \(JSON)")
             }
-            
         }
     }
 

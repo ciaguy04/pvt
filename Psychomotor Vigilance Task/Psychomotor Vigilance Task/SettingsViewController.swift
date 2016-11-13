@@ -22,12 +22,7 @@ class SettingsViewController: UIViewController {
         if let pid_text = context.record {
             self.pid.text = pid_text
         }
-        
         self.specialty.selectedSegmentIndex = context.arm - 1
-       
-
-        
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,7 +30,6 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -47,16 +41,12 @@ class SettingsViewController: UIViewController {
     */
     
     //MARK: - Actions
-    
-    //TODO: Add save to nav bar
-    
     @IBAction func reset_pvt_index(_ sender: Any) {
         //#### Debugging code ########
         print("Successfully pressed")
         context.pvt_index = 0
         navigationController!.popToRootViewController(animated: true)
     }
-    
     
     @IBAction func save_and_return(_ sender: Any) {
         context.arm = (specialty.selectedSegmentIndex + 1)  //REDCap arm =(specialty index+1).

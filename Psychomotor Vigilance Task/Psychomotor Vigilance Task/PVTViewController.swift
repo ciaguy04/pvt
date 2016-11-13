@@ -25,7 +25,6 @@ enum TrialState {
 
 class PVTViewController: UIViewController {
     
-    //MARK: Properties
     //MARK: - Outlets
     @IBOutlet weak var counter_view: UILabel!
     
@@ -46,7 +45,7 @@ class PVTViewController: UIViewController {
     var submission_status: SubmissionStatus?
     
     
-    //MARK: Initializer
+    //MARK: - Initializer
     required init?(coder aDecoder: NSCoder) {
         self.start_trial_time = 0
         self.current_trial_time = 0
@@ -56,7 +55,7 @@ class PVTViewController: UIViewController {
         super.init(coder: aDecoder)
     }
     
-    //MARK:Overrides
+    //MARK: - VC Lifecycle Mgmt
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -79,7 +78,7 @@ class PVTViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    //MARK: Custom Test Methods
+    //MARK: - Custom Test Methods (private)
     private func currentTimeMillis() -> Int64 {
         let nowDouble = NSDate().timeIntervalSince1970
         return Int64(nowDouble*1000)
@@ -175,7 +174,7 @@ class PVTViewController: UIViewController {
         }
     }
     
-    //MARK: Actions
+    //MARK: - Actions
     @IBAction func view_touched(_ sender: Any) {
         switch self.trial_state{
         case .Active:
