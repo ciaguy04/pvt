@@ -37,12 +37,25 @@
                                     <segue destination="fu8-vx-0M5" kind="show" id="FPp-BB-07b"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 0.1 (beta)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rf8-g2-KD9">
+                                <rect key="frame" x="125" y="596" width="165" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="165" id="6XO-og-pEk"/>
+                                    <constraint firstAttribute="height" constant="21" id="NAP-76-m89"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.93269016059999998" blue="0.1039846348" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.16861122846603394" green="0.16863656044006348" blue="0.16860261559486389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="1" green="0.93269016059999998" blue="0.1039846348" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="5RU-CL-3tI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9j9-SW-hlu"/>
+                            <constraint firstItem="rf8-g2-KD9" firstAttribute="top" relation="greaterThanOrEqual" secondItem="5RU-CL-3tI" secondAttribute="bottom" constant="50" id="L2Q-T2-SRT"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rf8-g2-KD9" secondAttribute="bottom" constant="75" id="NfP-qW-IpV"/>
                             <constraint firstItem="5RU-CL-3tI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="74" id="Rdj-a4-KQm"/>
+                            <constraint firstItem="rf8-g2-KD9" firstAttribute="centerX" secondItem="5RU-CL-3tI" secondAttribute="centerX" id="Xau-jr-j37"/>
                         </constraints>
                     </view>
                     <toolbarItems>
@@ -57,7 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1056.8" y="122.78860569715144"/>
+            <point key="canvasLocation" x="1055.072463768116" y="122.28260869565219"/>
         </scene>
         <!--PVT-->
         <scene sceneID="BBn-dG-lOT">
