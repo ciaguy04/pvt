@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F97712764CC6D7B0AF54F7C /* Pods_Psychomotor_Vigilance_Task.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6307F8F931B4CE116AE7391C /* Pods_Psychomotor_Vigilance_Task.framework */; };
 		6510B57D1DD52ED6002A4E14 /* TestResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6510B57C1DD52ED6002A4E14 /* TestResultVC.swift */; };
 		65435D8F1DC2C0C500C334F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65435D8E1DC2C0C500C334F8 /* AppDelegate.swift */; };
 		65435D911DC2C0C500C334F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65435D901DC2C0C500C334F8 /* ViewController.swift */; };
@@ -22,7 +23,6 @@
 		658A10981DC2D4B800250600 /* REDCapAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658A10971DC2D4B800250600 /* REDCapAPI.swift */; };
 		65BCAD431DC4544700A2A223 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BCAD421DC4544700A2A223 /* Test.swift */; };
 		65ECF5F41DC7917900EB07EF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ECF5F31DC7917900EB07EF /* SettingsViewController.swift */; };
-		90BA660C0C1BBA779BF6D5FE /* Pods_Psychomotor_Vigilance_Task.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1986C9DC198E833FFF1C0048 /* Pods_Psychomotor_Vigilance_Task.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,8 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1986C9DC198E833FFF1C0048 /* Pods_Psychomotor_Vigilance_Task.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Psychomotor_Vigilance_Task.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		472C0DDCF92762B2028A5DF7 /* Pods-Psychomotor Vigilance Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psychomotor Vigilance Task.release.xcconfig"; path = "Pods/Target Support Files/Pods-Psychomotor Vigilance Task/Pods-Psychomotor Vigilance Task.release.xcconfig"; sourceTree = "<group>"; };
+		15B1E33ED504F747A123A03F /* Pods-Psychomotor Vigilance Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psychomotor Vigilance Task.release.xcconfig"; path = "Pods/Target Support Files/Pods-Psychomotor Vigilance Task/Pods-Psychomotor Vigilance Task.release.xcconfig"; sourceTree = "<group>"; };
+		6307F8F931B4CE116AE7391C /* Pods_Psychomotor_Vigilance_Task.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Psychomotor_Vigilance_Task.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6510B57C1DD52ED6002A4E14 /* TestResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestResultVC.swift; sourceTree = "<group>"; };
 		65435D8B1DC2C0C500C334F8 /* Psychomotor Vigilance Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Psychomotor Vigilance Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65435D8E1DC2C0C500C334F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 		658A10971DC2D4B800250600 /* REDCapAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = REDCapAPI.swift; sourceTree = "<group>"; };
 		65BCAD421DC4544700A2A223 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		65ECF5F31DC7917900EB07EF /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		92869A8593361F9997A2A118 /* Pods-Psychomotor Vigilance Task.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psychomotor Vigilance Task.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Psychomotor Vigilance Task/Pods-Psychomotor Vigilance Task.debug.xcconfig"; sourceTree = "<group>"; };
+		78597FE1C68E8C3E41E6C743 /* Pods-Psychomotor Vigilance Task.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psychomotor Vigilance Task.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Psychomotor Vigilance Task/Pods-Psychomotor Vigilance Task.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90BA660C0C1BBA779BF6D5FE /* Pods_Psychomotor_Vigilance_Task.framework in Frameworks */,
+				0F97712764CC6D7B0AF54F7C /* Pods_Psychomotor_Vigilance_Task.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,23 +95,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1311EFBAFD3523B6A15986DE /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				92869A8593361F9997A2A118 /* Pods-Psychomotor Vigilance Task.debug.xcconfig */,
-				472C0DDCF92762B2028A5DF7 /* Pods-Psychomotor Vigilance Task.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		408E258A5BEF5DB1EDBCEE1A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1986C9DC198E833FFF1C0048 /* Pods_Psychomotor_Vigilance_Task.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		651014841DD69D58000D2E68 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,8 +143,8 @@
 				65435DA51DC2C0C600C334F8 /* Psychomotor Vigilance TaskTests */,
 				65435DB01DC2C0C600C334F8 /* Psychomotor Vigilance TaskUITests */,
 				65435D8C1DC2C0C500C334F8 /* Products */,
-				1311EFBAFD3523B6A15986DE /* Pods */,
-				408E258A5BEF5DB1EDBCEE1A /* Frameworks */,
+				829785738388D91A4938E5A4 /* Pods */,
+				744712AFE18CC30E77402E90 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -213,6 +196,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		744712AFE18CC30E77402E90 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6307F8F931B4CE116AE7391C /* Pods_Psychomotor_Vigilance_Task.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		829785738388D91A4938E5A4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				78597FE1C68E8C3E41E6C743 /* Pods-Psychomotor Vigilance Task.debug.xcconfig */,
+				15B1E33ED504F747A123A03F /* Pods-Psychomotor Vigilance Task.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -220,12 +220,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65435DB61DC2C0C600C334F8 /* Build configuration list for PBXNativeTarget "Psychomotor Vigilance Task" */;
 			buildPhases = (
-				51C5CB491BE8B3E5E6993111 /* [CP] Check Pods Manifest.lock */,
+				10248D28A10E833EB371F2AB /* [CP] Check Pods Manifest.lock */,
 				65435D871DC2C0C500C334F8 /* Sources */,
 				65435D881DC2C0C500C334F8 /* Frameworks */,
 				65435D891DC2C0C500C334F8 /* Resources */,
-				17357A55ADCFB7408223ACE2 /* [CP] Embed Pods Frameworks */,
-				0984484CFF396F0532CCDA3E /* [CP] Copy Pods Resources */,
+				198BB1F813B3D0AF382A184C /* [CP] Embed Pods Frameworks */,
+				D1546D88302E315F38CC2F33 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -346,22 +346,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0984484CFF396F0532CCDA3E /* [CP] Copy Pods Resources */ = {
+		10248D28A10E833EB371F2AB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Psychomotor Vigilance Task/Pods-Psychomotor Vigilance Task-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		17357A55ADCFB7408223ACE2 /* [CP] Embed Pods Frameworks */ = {
+		198BB1F813B3D0AF382A184C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -376,19 +376,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Psychomotor Vigilance Task/Pods-Psychomotor Vigilance Task-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		51C5CB491BE8B3E5E6993111 /* [CP] Check Pods Manifest.lock */ = {
+		D1546D88302E315F38CC2F33 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Psychomotor Vigilance Task/Pods-Psychomotor Vigilance Task-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -465,6 +465,7 @@
 		65435DB41DC2C0C600C334F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -515,6 +516,7 @@
 		65435DB51DC2C0C600C334F8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -557,7 +559,7 @@
 		};
 		65435DB71DC2C0C600C334F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 92869A8593361F9997A2A118 /* Pods-Psychomotor Vigilance Task.debug.xcconfig */;
+			baseConfigurationReference = 78597FE1C68E8C3E41E6C743 /* Pods-Psychomotor Vigilance Task.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -566,12 +568,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.vumc.sleep.Psychomotor-Vigilance-Task";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		65435DB81DC2C0C600C334F8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 472C0DDCF92762B2028A5DF7 /* Pods-Psychomotor Vigilance Task.release.xcconfig */;
+			baseConfigurationReference = 15B1E33ED504F747A123A03F /* Pods-Psychomotor Vigilance Task.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -580,6 +583,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.vumc.sleep.Psychomotor-Vigilance-Task";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

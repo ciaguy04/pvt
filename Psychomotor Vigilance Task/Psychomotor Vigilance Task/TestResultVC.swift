@@ -7,45 +7,66 @@
 //
 
 import UIKit
+import ScrollableGraphView
 
 class TestResultVC: UIViewController {
     
     //MARK: - Outlets / Properties
     @IBOutlet weak var test_label: UILabel!
-    private var _pvtvc_dict: [String: Any]?
+    @IBOutlet weak var submission_pending: UIActivityIndicatorView!
+    private var _pvtvc: PVTViewController?
+    private var status_update_timer = Timer()
+//    private var _pvtvc_dict: [String: Any]?
     
     //MARK: - Computed Properties
-    var pvtvc_dict: [String: Any] {
+    var pvtvc: PVTViewController {
         get{
-            return _pvtvc_dict! 
+            return _pvtvc!
         } set {
-            _pvtvc_dict = newValue
+            _pvtvc = newValue
         }
     }
     
-    var pvtvc_num_fs: Int {
-        get{
-            return _pvtvc_dict!["num_fs"] as! Int
-        }
-    }
-    
-    var pvtvc_trial_time_list: [Int] {
-        get{
-            return _pvtvc_dict!["trial_time_list"] as! [Int]
-        }
-    }
-    
-    var pvtvc_call_success: SubmissionStatus {
-        get{
-            return _pvtvc_dict!["api_call_success"] as! SubmissionStatus
-        }
-    }
+//    var pvtvc_dict: [String: Any] {
+//        get{
+//            return _pvtvc_dict! 
+//        } set {
+//            _pvtvc_dict = newValue
+//        }
+//    }
+//    
+//    var pvtvc_num_fs: Int {
+//        get{
+//            return _pvtvc_dict!["num_fs"] as! Int
+//        }
+//    }
+//    
+//    var pvtvc_trial_time_list: [Int] {
+//        get{
+//            return _pvtvc_dict!["trial_time_list"] as! [Int]
+//        }
+//    }
+//    
+//    var pvtvc_call_success: SubmissionStatus {
+//        get{
+//            return _pvtvc_dict!["api_call_success"] as! SubmissionStatus
+//        }
+//    }
     
     //MARK: - VC Lifecycle Mgmt
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: false)
-        print("\(pvtvc_num_fs) \n \(pvtvc_trial_time_list.debugDescription) \n \(pvtvc_call_success)")
+        initialize_activity_indicator()
+        self.status_update_timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(update_status), userInfo: nil, repeats: true)
+        
+        
+//        let graphView = ScrollableGraphView(frame: CGRect(x:80, y:100, width: 250, height: 400))
+//        let labels = [1...pvtvc_trial_time_list.count]
+//        graphView.set(data: intArray_to_dubArray(pvtvc_trial_time_list), withLabels: ["1", "2", "3", "4", "5"])
+//        graphView.shouldAdaptRange = true
+//        graphView.shouldRangeAlwaysStartAtZero = true
+//        self.view.addSubview(graphView)
         // Do any additional setup after loading the view.
     }
 
@@ -65,8 +86,37 @@ class TestResultVC: UIViewController {
     }
     */
     
-    //MARK: - Actions
+    // MARK: - Custom
+//    func intArray_to_dubArray(_ intArray: [Int]) -> [Double] {
+//        var dubArray: [Double] = []
+//        for i in intArray {
+//            dubArray.append(Double(i))
+//        }
+//        return dubArray
+//    }
     
+    @objc private func update_status () {
+        if let status = self.pvtvc.submission_status {
+            self.submission_pending.stopAnimating()
+            if status == SubmissionStatus.success {
+                self.test_label.text! = status.rawValue
+                self.test_label.textColor = UIColor.green
+                self.status_update_timer.invalidate()
+                self.pvtvc.test_data.test_context.pvt_index += 1
+            } else {
+                self.test_label.text! = status.rawValue
+                self.test_label.textColor = UIColor.red
+                self.status_update_timer.invalidate()                       //TODO: - Consider providing further instructions (ie. retake test)
+            }
+        }
+    }
+    
+    private func initialize_activity_indicator() {
+        self.submission_pending.hidesWhenStopped = true
+        self.submission_pending.startAnimating()
+    }
+    
+    //MARK: - Actions
     @IBAction func navigate_home(_ sender: Any) {
         navigationController!.popToRootViewController(animated: true)
     }
