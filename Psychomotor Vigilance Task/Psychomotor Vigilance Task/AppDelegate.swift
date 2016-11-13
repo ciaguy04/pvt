@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             defaults.set(0, forKey: ContextKeys.pvt_index)
             defaults.synchronize()
         }
-        
+
         if defaults.integer(forKey: ContextKeys.arm) == 0 {
             print("setting arm")
             defaults.set(1, forKey: ContextKeys.arm)

@@ -10,13 +10,12 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     //MARK: - Properties
-    
     @IBOutlet weak var pid: UITextField!
     @IBOutlet weak var specialty: UISegmentedControl!
     @IBOutlet weak var invalid_pid_label: UILabel!
-    
     var context: Context = Context()
     
+    // MARK: - VC Lifecycle Mgmt
     override func viewDidLoad() {
         super.viewDidLoad()
         if let pid_text = context.record {
@@ -42,8 +41,8 @@ class SettingsViewController: UIViewController {
     
     //MARK: - Actions
     @IBAction func reset_pvt_index(_ sender: Any) {
-        //#### Debugging code ########
-        print("Successfully pressed")
+        //#### Debugging code for beta testing ########
+        //TODO: Remove when project goes to deployment
         context.pvt_index = 0
         navigationController!.popToRootViewController(animated: true)
     }

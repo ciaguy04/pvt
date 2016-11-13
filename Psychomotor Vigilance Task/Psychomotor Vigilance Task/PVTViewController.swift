@@ -40,7 +40,7 @@ class PVTViewController: UIViewController {
     private var current_trial_time: Int64           //used to compare current time to start_trial_time
     private var start_pvt_time: Int64               //use this variable to track when 3 minutes are up
     
-    //MARK: - Data Management Objects
+    //MARK: - Data Management Properties
     var test_data: Test
     var submission_status: SubmissionStatus?
     
@@ -79,17 +79,21 @@ class PVTViewController: UIViewController {
     }
     
     //MARK: - Custom Test Methods (private)
+    
+    //### method to return the current time (ms) - each trial requires timer precision near 50-100ms
     private func currentTimeMillis() -> Int64 {
         let nowDouble = NSDate().timeIntervalSince1970
         return Int64(nowDouble*1000)
     }
     
+    //### method returns random number between a range
     private func randomNumber(range: Range<Int>) -> Int {
         let min = range.lowerBound
         let max = range.upperBound
         return Int(arc4random_uniform(UInt32(max-min))) + min
     }
     
+    //### method called to start a single trial of the overall 3 min test
     @objc private func start_trial(){
         self.trial_state = .Active
         self.start_trial_time = currentTimeMillis()
@@ -97,6 +101,7 @@ class PVTViewController: UIViewController {
         self.trial_timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(update_counter), userInfo: nil, repeats: true)
     }
     
+    //### method called by start_trial(), which updates the couter_view every 50-100ms (max: 5s per trial)
     @objc private func update_counter() {
         self.current_trial_time = currentTimeMillis()
         if (self.current_trial_time - self.start_trial_time <= 5000){
@@ -111,21 +116,19 @@ class PVTViewController: UIViewController {
         }
     }
     
+    //### if test duration has been < 3min and a test is not active, start one
+    //### if time has expired, navigate to next VC and submit to REDCap
     @objc private func start_trial_countdown(){
-        if currentTimeMillis() - self.start_pvt_time <= 30000 {
-            print(String(currentTimeMillis() - self.start_pvt_time) + "ms into the test")               //caveman debugging tool
+        if currentTimeMillis() - self.start_pvt_time <= 180000 {
             switch self.trial_state{
             case .Inactive:
                 self.trial_state = .Delay
                 counter_view!.text! = ""
                 let delay = randomNumber(range: 2..<9)
-                print("The Random # is: " + String(delay) + " at " + String(currentTimeMillis() - self.start_pvt_time))                                              //caveman debugging tool
                 self.trial_countdown_timer = Timer.scheduledTimer(timeInterval: Double(delay), target: self, selector: #selector(start_trial), userInfo: nil, repeats: false)
             case .Active:
-                print(".Active")
                 return
             case .Delay:
-                print(".Delay")
                 return
             }
             
@@ -135,23 +138,7 @@ class PVTViewController: UIViewController {
             REDCapAPI.postToURL(withData: self.test_data.data_dict, andContext: self.test_data.context_dict, fromCaller: self)
             counter_view!.text! = "END TEST"
             show_end_test_alert()
-            
         }
-        
-        /* Data that needs to be sent:
-         
-         Data Elements:
-         start_datetime
-         trial_time_list
-         num_fs
-         pvt_data_complete -> set to '1' (unverified)
-         
-         Context Elements:
-         record
-         redcap_event_name:  (pre | post)_(day | night)_[1-5]_pvt_arm_[1-3]
-         
-         */
-        
     }
     
     private func show_end_test_alert () {
@@ -167,8 +154,6 @@ class PVTViewController: UIViewController {
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
         if let destination = segue.destination as? TestResultVC {
             destination.pvtvc = self
         }
@@ -187,7 +172,6 @@ class PVTViewController: UIViewController {
         default:
             counter_view!.text! = "FALSE START!!"
             test_data.num_fs += 1
-            print("False Start" + test_data.data_as_string)
             self.trial_countdown_timer.invalidate()
             self.trial_state = .Inactive
         }

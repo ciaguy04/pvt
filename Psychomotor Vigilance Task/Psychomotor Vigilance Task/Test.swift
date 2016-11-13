@@ -9,19 +9,14 @@
 import Foundation
 
 class Test {
-    let test_context: Context           //contextual data
+    let test_context: Context           //contextual data for REDCap
     let start_datetime : Date
-    var trial_time_list : [Int]         //data
-    var num_fs: Int                     //data
+    var trial_time_list : [Int]         //test data
+    var num_fs: Int                     //test data
     
     
     //MARK: Computed properties
-    var data_as_string: String {
-        return "Test Start: \(self.start_datetime) \n" + "Test Data:" + self.trial_time_list.description + "\n" + "False Starts: \(num_fs)"
-    }
-    
     var start_date: String{
-        //let userCalendar = Calendar.current
         let myFormatter = DateFormatter()
         myFormatter.locale = Locale(identifier: "en_US_POSIX")
         myFormatter.dateFormat = "y-MM-dd"

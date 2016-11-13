@@ -14,10 +14,10 @@ struct ContextKeys{
     static let pvt_index = "pvt_index"
 }
 
-//TODO: - Convert into a 'singleton facade' to encapsulate persistence
 class Context {
-    let PVT_DATA_COMPLETE = 1               //hardcoded value to denote '1' (unverified) status in REDCap Project
-    static let PVT_NAMES = ["pre_day_1",
+    
+    let PVT_DATA_COMPLETE = 1                   //constants denote '1' (unverified) status in REDCap Project
+    static let PVT_NAMES = ["pre_day_1",        //constants for data fields in REDCap
                      "post_day_1",
                      "pre_day_2",
                      "post_day_2",
@@ -49,7 +49,7 @@ class Context {
         } set {
             let defaults = UserDefaults.standard
             defaults.set(newValue, forKey: ContextKeys.REDCap_record)
-            print("record set to \(newValue)")
+            defaults.synchronize()
         }
     }
     
@@ -57,7 +57,6 @@ class Context {
         get { let defaults = UserDefaults.standard
             return defaults.integer(forKey:ContextKeys.arm)
         } set {
-            print("arm set to \(newValue)")
             let defaults = UserDefaults.standard
             defaults.set(newValue, forKey: ContextKeys.arm)
             defaults.synchronize()
@@ -68,7 +67,6 @@ class Context {
         get { let defaults = UserDefaults.standard
             return defaults.integer(forKey: ContextKeys.pvt_index)
         } set {
-            print("newValue is \(newValue)")
             let defaults = UserDefaults.standard
             defaults.set(newValue, forKey: ContextKeys.pvt_index)
             defaults.synchronize()
@@ -76,7 +74,6 @@ class Context {
     }
 
     var event_name: String {
-        print (Context.PVT_NAMES[pvt_index] + "_pvt_arm_" + String(arm))                //debugging
         return Context.PVT_NAMES[pvt_index] + "_pvt_arm_" + String(arm)
     }
     
