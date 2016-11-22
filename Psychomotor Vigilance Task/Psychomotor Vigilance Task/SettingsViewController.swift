@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController, UITextFieldDelegate {
     //MARK: - Properties
     @IBOutlet weak var pid: UITextField!
     @IBOutlet weak var specialty: UISegmentedControl!
@@ -18,6 +18,7 @@ class SettingsViewController: UIViewController {
     // MARK: - VC Lifecycle Mgmt
     override func viewDidLoad() {
         super.viewDidLoad()
+        pid.delegate = self
         if let pid_text = context.record {
             self.pid.text = pid_text
         }
@@ -27,6 +28,13 @@ class SettingsViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK: - UITextFieldDelegate methods
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     /*
