@@ -14,10 +14,10 @@ struct ContextKeys{
     static let pvt_index = "pvt_index"
 }
 
+//TODO: - Convert into a 'singleton facade' to encapsulate persistence
 class Context {
-    
-    let PVT_DATA_COMPLETE = 1                   //constants denote '1' (unverified) status in REDCap Project
-    static let PVT_NAMES = ["pre_day_1",        //constants for data fields in REDCap
+    let PVT_DATA_COMPLETE = 1               //constants denote '1' (unverified) status in REDCap Project
+    static let PVT_NAMES = ["pre_day_1",    //constants for data fields in REDCap
                      "post_day_1",
                      "pre_day_2",
                      "post_day_2",
@@ -74,6 +74,7 @@ class Context {
     }
 
     var event_name: String {
+        print (Context.PVT_NAMES[pvt_index] + "_pvt_arm_" + String(arm))                //debugging
         return Context.PVT_NAMES[pvt_index] + "_pvt_arm_" + String(arm)
     }
     

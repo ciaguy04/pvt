@@ -24,6 +24,7 @@ class ViewController: UIViewController {
             alert.addAction(default_action)
             self.present(alert, animated: true, completion: nil)
         }
+        print(defaults.dictionaryRepresentation().debugDescription)
     }
 
     override func didReceiveMemoryWarning() {

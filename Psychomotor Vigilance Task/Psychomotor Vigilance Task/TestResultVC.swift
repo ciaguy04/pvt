@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ScrollableGraphView
 
 class TestResultVC: UIViewController {
     
@@ -33,6 +34,14 @@ class TestResultVC: UIViewController {
         self.navigationItem.setHidesBackButton(true, animated: false)
         initialize_activity_indicator()
         self.status_update_timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(update_status), userInfo: nil, repeats: true)
+        
+//        let graphView = ScrollableGraphView(frame: CGRect(x:80, y:100, width: 250, height: 400))
+//        let labels = [1...pvtvc_trial_time_list.count]
+//        graphView.set(data: intArray_to_dubArray(pvtvc_trial_time_list), withLabels: ["1", "2", "3", "4", "5"])
+//        graphView.shouldAdaptRange = true
+//        graphView.shouldRangeAlwaysStartAtZero = true
+//        self.view.addSubview(graphView)
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,7 +49,25 @@ class TestResultVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+    
     // MARK: - Custom VC Methods
+//    func intArray_to_dubArray(_ intArray: [Int]) -> [Double] {
+//        var dubArray: [Double] = []
+//        for i in intArray {
+//            dubArray.append(Double(i))
+//        }
+//        return dubArray
+//    }
     
     @objc private func update_status () {
         if let status = self.pvtvc.submission_status {

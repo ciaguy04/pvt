@@ -139,6 +139,21 @@ class PVTViewController: UIViewController {
             counter_view!.text! = "END TEST"
             show_end_test_alert()
         }
+        
+        /* Data that needs to be sent:
+         
+         Data Elements:
+         start_datetime
+         trial_time_list
+         num_fs
+         pvt_data_complete -> set to '1' (unverified)
+         
+         Context Elements:
+         record
+         redcap_event_name:  (pre | post)_(day | night)_[1-5]_pvt_arm_[1-3]
+         
+         */
+        
     }
     
     private func show_end_test_alert () {
@@ -154,6 +169,8 @@ class PVTViewController: UIViewController {
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
         if let destination = segue.destination as? TestResultVC {
             destination.pvtvc = self
         }

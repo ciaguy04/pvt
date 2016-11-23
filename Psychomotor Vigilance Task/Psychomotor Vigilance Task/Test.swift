@@ -16,6 +16,10 @@ class Test {
     
     
     //MARK: Computed properties
+    var data_as_string: String {
+        return "Test Start: \(self.start_datetime) \n" + "Test Data:" + self.trial_time_list.description + "\n" + "False Starts: \(num_fs)"
+    }
+    
     var start_date: String{
         let myFormatter = DateFormatter()
         myFormatter.locale = Locale(identifier: "en_US_POSIX")

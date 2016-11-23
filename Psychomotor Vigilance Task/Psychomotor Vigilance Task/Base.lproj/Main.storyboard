@@ -33,7 +33,7 @@
                                     <color key="titleColor" red="1" green="0.07482077878" blue="0.053801445959999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="fu8-vx-0M5" kind="show" id="FPp-BB-07b"/>
+                                    <segue destination="N8L-2j-MUm" kind="show" id="IUu-Fb-N3z"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.0 (beta)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rf8-g2-KD9">
@@ -69,7 +69,59 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1055.072463768116" y="122.28260869565219"/>
+            <point key="canvasLocation" x="904" y="122"/>
+        </scene>
+        <!--PVT Instructions-->
+        <scene sceneID="g8m-aO-3kA">
+            <objects>
+                <viewController title="PVT Instructions" id="N8L-2j-MUm" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7em-9v-4MR"/>
+                        <viewControllerLayoutGuide type="bottom" id="nhb-hL-97P"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XYH-kT-4RK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u71-ZU-a3N">
+                                <rect key="frame" x="145.66666666666669" y="398" width="123.00000000000006" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="123" id="TLm-UF-BSH"/>
+                                    <constraint firstAttribute="height" constant="30" id="g9E-F9-5hs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Got it!">
+                                    <color key="titleColor" red="1" green="0.07482077878" blue="0.053801445959999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="fu8-vx-0M5" kind="show" id="7aB-e3-9Qk"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="rfL-zI-TGX">
+                                <rect key="frame" x="39" y="89" width="336" height="259"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="259" id="pS2-IM-N09"/>
+                                </constraints>
+                                <string key="text">This test is designed to test your reaction time and ability to stay on task during various parts of the day.  Place the phone in your dominant hand and immediately tap the screen when you see the counter appear.  Tapping the screen before the numbers appear is recorded as a false start.  The test lasts 3 minutes.  </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.93269016059999998" blue="0.1039846348" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.16861122849999999" green="0.1686365604" blue="0.16860261560000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="u71-ZU-a3N" firstAttribute="centerX" secondItem="rfL-zI-TGX" secondAttribute="centerX" id="3am-cd-hIT"/>
+                            <constraint firstItem="rfL-zI-TGX" firstAttribute="top" secondItem="7em-9v-4MR" secondAttribute="bottom" constant="25" id="SSd-42-H2v"/>
+                            <constraint firstItem="rfL-zI-TGX" firstAttribute="leading" secondItem="XYH-kT-4RK" secondAttribute="leadingMargin" constant="19" id="asP-h8-wfR"/>
+                            <constraint firstItem="u71-ZU-a3N" firstAttribute="top" secondItem="rfL-zI-TGX" secondAttribute="bottom" constant="50" id="b6f-9r-OtD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rfL-zI-TGX" secondAttribute="trailing" constant="19" id="uta-tS-vMk"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="18k-uk-bhQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1740" y="123"/>
         </scene>
         <!--PVT-->
         <scene sceneID="BBn-dG-lOT">
@@ -83,14 +135,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZK-M3-KaA" userLabel="Counter View">
-                                <rect key="frame" x="99.666666666666686" y="149" width="215" height="64"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="BZK-M3-KaA" userLabel="Counter View">
+                                <rect key="frame" x="20" y="149" width="374" height="130"/>
                                 <color key="backgroundColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="gHO-e9-QQU"/>
-                                    <constraint firstAttribute="width" constant="215" id="yf8-kl-ael"/>
+                                    <constraint firstAttribute="height" constant="130" id="of4-p2-HYy"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="1" green="0.07482077878" blue="0.053801445959999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -99,7 +150,9 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="BZK-M3-KaA" firstAttribute="centerX" secondItem="Fhj-8C-fZ3" secondAttribute="centerX" id="Cpy-Af-o2E"/>
+                            <constraint firstItem="BZK-M3-KaA" firstAttribute="leading" secondItem="Fhj-8C-fZ3" secondAttribute="leading" constant="20" id="DaB-0l-2fN"/>
                             <constraint firstItem="BZK-M3-KaA" firstAttribute="top" secondItem="AOh-OP-f1A" secondAttribute="bottom" constant="85" id="n1f-aF-1CL"/>
+                            <constraint firstAttribute="trailing" secondItem="BZK-M3-KaA" secondAttribute="trailing" constant="20" id="sC6-ov-cHj"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="a2g-v4-iEY" appends="YES" id="pjJ-wY-3zz"/>
@@ -118,7 +171,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1944.8" y="122.78860569715144"/>
+            <point key="canvasLocation" x="2426" y="123"/>
         </scene>
         <!--Test Result-->
         <scene sceneID="7mz-jn-TJB">
@@ -133,7 +186,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pdv-fX-GbS">
-                                <rect key="frame" x="160.66666666666666" y="278" width="93" height="30"/>
+                                <rect key="frame" x="160.66666666666663" y="278" width="93" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.90056573279999996" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="93" id="lyv-gO-pse"/>
@@ -155,7 +208,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="uDx-uI-LtB">
-                                <rect key="frame" x="182.66666666666666" y="328" width="50" height="50"/>
+                                <rect key="frame" x="182.66666666666663" y="328" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="hhb-SW-KrV"/>
                                     <constraint firstAttribute="height" constant="50" id="rOg-Ye-aay"/>
@@ -182,7 +235,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wfn-ve-MYf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2788" y="122.78860569715144"/>
+            <point key="canvasLocation" x="3138" y="122"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Qee-cT-iDi">
@@ -290,7 +343,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j0H-Pu-aCL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1005.6" y="-687.7061469265368"/>
+            <point key="canvasLocation" x="1740" y="-739"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nif-N8-yLK">

@@ -23,6 +23,20 @@ class REDCapAPI {
         )
     }()
 
+    static func getURL (_ url:String){
+        
+        Alamofire.request(url).responseJSON { response in
+            print("request: \(response.request)")
+            print("response: \(response.response)")
+            print("data: \(response.data)")
+            print("result: \(response.result)")
+            
+            if let JSON = response.result.value {
+                print("JSON: \(JSON)")
+            }
+        }
+    }
+
     static func postToURL (withData data:[String:Any], andContext context:[String:Any], fromCaller caller: Any) {
         //### REDCap API call requires combination of cURL and JSON
         var jsonString = "["
@@ -35,8 +49,9 @@ class REDCapAPI {
         }
         jsonString.remove(at: jsonString.index(before: jsonString.endIndex))
         jsonString.insert("]", at:jsonString.endIndex)
+        print(jsonString)
         
-        //### Building headers for HTTP POST body
+        //Building headers for post method body - comment to avoid API calls during debugging above code -> see 'end comment'
         let parameters: Parameters =
         [   "token": TOKEN,
             "content": "record",
@@ -55,6 +70,7 @@ class REDCapAPI {
             
             if response.response == nil {
                 (caller as! PVTViewController).submission_status = SubmissionStatus.no_connectivity
+                //TODO: return to main screen +/- save PVT data to send at a later time.
             }
             if let rawJSONResponse = response.result.value {
                 if response.result.isSuccess && JSON(rawJSONResponse)["count"] == nil  {
@@ -65,5 +81,7 @@ class REDCapAPI {
                 }
             }
         }
+    //end comment
+        
     }
 }
