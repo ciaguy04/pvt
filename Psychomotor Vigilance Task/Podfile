@@ -6,4 +6,6 @@ target 'Psychomotor Vigilance Task' do
 	pod 'Alamofire', '~> 4.0'
 	pod 'SwiftyJSON'
 	pod 'ScrollableGraphView'
+	pod 'Firebase/Core'
+	pod 'Firebase/Messaging'
 end

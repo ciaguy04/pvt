@@ -20,6 +20,7 @@
 		65435DC01DC2C1F000C334F8 /* PVTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65435DBF1DC2C1F000C334F8 /* PVTViewController.swift */; };
 		65744AF81DC4FA3F00408084 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65744AF71DC4FA3F00408084 /* Secrets.swift */; };
 		65744AFA1DC4FF4800408084 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65744AF91DC4FF4800408084 /* Context.swift */; };
+		65756D6F1DF1007A00ADDEDF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65756D6E1DF1007A00ADDEDF /* GoogleService-Info.plist */; };
 		658A10981DC2D4B800250600 /* REDCapAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658A10971DC2D4B800250600 /* REDCapAPI.swift */; };
 		65BCAD431DC4544700A2A223 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BCAD421DC4544700A2A223 /* Test.swift */; };
 		65ECF5F41DC7917900EB07EF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ECF5F31DC7917900EB07EF /* SettingsViewController.swift */; };
@@ -63,6 +64,8 @@
 		65435DBF1DC2C1F000C334F8 /* PVTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVTViewController.swift; sourceTree = "<group>"; };
 		65744AF71DC4FA3F00408084 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		65744AF91DC4FF4800408084 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
+		65756D6E1DF1007A00ADDEDF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		65756D701DF10B6300ADDEDF /* Psychomotor Vigilance Task.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Psychomotor Vigilance Task.entitlements"; sourceTree = "<group>"; };
 		658A10971DC2D4B800250600 /* REDCapAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = REDCapAPI.swift; sourceTree = "<group>"; };
 		65BCAD421DC4544700A2A223 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		65ECF5F31DC7917900EB07EF /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +119,7 @@
 		651014861DD69F89000D2E68 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				65756D6E1DF1007A00ADDEDF /* GoogleService-Info.plist */,
 				65435D981DC2C0C500C334F8 /* Assets.xcassets */,
 				65435D9A1DC2C0C500C334F8 /* LaunchScreen.storyboard */,
 				65435D9D1DC2C0C500C334F8 /* Info.plist */,
@@ -161,6 +165,7 @@
 		65435D8D1DC2C0C500C334F8 /* Psychomotor Vigilance Task */ = {
 			isa = PBXGroup;
 			children = (
+				65756D701DF10B6300ADDEDF /* Psychomotor Vigilance Task.entitlements */,
 				65435DC11DC2CB3700C334F8 /* Supporting Files */,
 				651014841DD69D58000D2E68 /* Model */,
 				6510B57B1DD52EB7002A4E14 /* Control */,
@@ -285,7 +290,12 @@
 					65435D8A1DC2C0C500C334F8 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = Q3CA99D23M;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					65435DA11DC2C0C600C334F8 = {
 						CreatedOnToolsVersion = 8.1;
@@ -325,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65435D9C1DC2C0C500C334F8 /* LaunchScreen.storyboard in Resources */,
+				65756D6F1DF1007A00ADDEDF /* GoogleService-Info.plist in Resources */,
 				65435D991DC2C0C500C334F8 /* Assets.xcassets in Resources */,
 				65435D941DC2C0C500C334F8 /* Main.storyboard in Resources */,
 			);
@@ -505,7 +516,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -550,7 +561,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -562,18 +573,19 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 78597FE1C68E8C3E41E6C743 /* Pods-Psychomotor Vigilance Task.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Psychomotor Vigilance Task/Psychomotor Vigilance Task.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = Q3CA99D23M;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Psychomotor Vigilance Task/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.devdr.Psychomotor-Vigilance-Task";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "26f5eed2-37e1-47be-92ea-22a4fd74b280";
-				PROVISIONING_PROFILE_SPECIFIER = PVTDistProv;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -583,18 +595,19 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 15B1E33ED504F747A123A03F /* Pods-Psychomotor Vigilance Task.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Psychomotor Vigilance Task/Psychomotor Vigilance Task.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: James Andry (Q3CA99D23M)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: James Andry (Q3CA99D23M)";
-				DEVELOPMENT_TEAM = Q3CA99D23M;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Psychomotor Vigilance Task/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.devdr.Psychomotor-Vigilance-Task";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "26f5eed2-37e1-47be-92ea-22a4fd74b280";
-				PROVISIONING_PROFILE_SPECIFIER = PVTDistProv;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

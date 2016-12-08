@@ -17,6 +17,8 @@ struct ContextKeys{
 //TODO: - Convert into a 'singleton facade' to encapsulate persistence
 class Context {
     let PVT_DATA_COMPLETE = 1               //constants denote '1' (unverified) status in REDCap Project
+    
+    //TODO: rename to pvt_1 ... pvt_j (RC + here)
     static let PVT_NAMES = ["pre_day_1",    //constants for data fields in REDCap
                      "post_day_1",
                      "pre_day_2",
