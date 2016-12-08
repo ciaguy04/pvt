@@ -10,6 +10,7 @@
 import UIKit
 import CoreData
 import Alamofire
+import AVFoundation
 
 enum SubmissionStatus: String {
     case no_connectivity = "An error has occurred.  Please check your internet connection.  If the error persists, please contact the study coordinator."
@@ -43,7 +44,7 @@ class PVTViewController: UIViewController {
     //MARK: - Data Management Properties
     var test_data: Test
     var submission_status: SubmissionStatus?
-    
+    var soundEffect: AVAudioPlayer!
     
     //MARK: - Initializer
     required init?(coder aDecoder: NSCoder) {
@@ -96,6 +97,17 @@ class PVTViewController: UIViewController {
     //### method called to start a single trial of the overall 3 min test
     @objc private func start_trial(){
         self.trial_state = .Active
+        
+        let path = Bundle.main.path(forResource: "fart-03.mp3", ofType:nil)!
+        let url = URL(fileURLWithPath: path)
+        do {
+            let sound = try AVAudioPlayer(contentsOf: url)
+            soundEffect = sound
+            sound.play()
+        } catch {
+            print("Couldn't load file")
+        }
+
         self.start_trial_time = currentTimeMillis()
         self.current_trial_time = currentTimeMillis()
         self.trial_timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(update_counter), userInfo: nil, repeats: true)
