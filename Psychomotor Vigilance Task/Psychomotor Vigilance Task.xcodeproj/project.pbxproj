@@ -20,8 +20,8 @@
 		65435DC01DC2C1F000C334F8 /* PVTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65435DBF1DC2C1F000C334F8 /* PVTViewController.swift */; };
 		65744AF81DC4FA3F00408084 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65744AF71DC4FA3F00408084 /* Secrets.swift */; };
 		65744AFA1DC4FF4800408084 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65744AF91DC4FF4800408084 /* Context.swift */; };
+		658459981DFF77A6005BD1E5 /* gunshot-02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 658459971DFF77A6005BD1E5 /* gunshot-02.mp3 */; };
 		658A10981DC2D4B800250600 /* REDCapAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658A10971DC2D4B800250600 /* REDCapAPI.swift */; };
-		65BBB0A71DF9263200C998B4 /* fart-03.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65BBB0A61DF9263100C998B4 /* fart-03.mp3 */; };
 		65BCAD431DC4544700A2A223 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BCAD421DC4544700A2A223 /* Test.swift */; };
 		65ECF5F41DC7917900EB07EF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ECF5F31DC7917900EB07EF /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -64,8 +64,8 @@
 		65435DBF1DC2C1F000C334F8 /* PVTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVTViewController.swift; sourceTree = "<group>"; };
 		65744AF71DC4FA3F00408084 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		65744AF91DC4FF4800408084 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
+		658459971DFF77A6005BD1E5 /* gunshot-02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "gunshot-02.mp3"; sourceTree = "<group>"; };
 		658A10971DC2D4B800250600 /* REDCapAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = REDCapAPI.swift; sourceTree = "<group>"; };
-		65BBB0A61DF9263100C998B4 /* fart-03.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "fart-03.mp3"; sourceTree = "<group>"; };
 		65BCAD421DC4544700A2A223 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		65ECF5F31DC7917900EB07EF /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		78597FE1C68E8C3E41E6C743 /* Pods-Psychomotor Vigilance Task.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psychomotor Vigilance Task.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Psychomotor Vigilance Task/Pods-Psychomotor Vigilance Task.debug.xcconfig"; sourceTree = "<group>"; };
@@ -192,7 +192,7 @@
 		65435DC11DC2CB3700C334F8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				65BBB0A61DF9263100C998B4 /* fart-03.mp3 */,
+				658459971DFF77A6005BD1E5 /* gunshot-02.mp3 */,
 				65435D921DC2C0C500C334F8 /* Main.storyboard */,
 				651014861DD69F89000D2E68 /* Other */,
 			);
@@ -329,8 +329,8 @@
 			files = (
 				65435D9C1DC2C0C500C334F8 /* LaunchScreen.storyboard in Resources */,
 				65435D991DC2C0C500C334F8 /* Assets.xcassets in Resources */,
-				65BBB0A71DF9263200C998B4 /* fart-03.mp3 in Resources */,
 				65435D941DC2C0C500C334F8 /* Main.storyboard in Resources */,
+				658459981DFF77A6005BD1E5 /* gunshot-02.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

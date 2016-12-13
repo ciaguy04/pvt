@@ -98,7 +98,7 @@ class PVTViewController: UIViewController {
     @objc private func start_trial(){
         self.trial_state = .Active
         
-        let path = Bundle.main.path(forResource: "fart-03.mp3", ofType:nil)!
+        let path = Bundle.main.path(forResource: "gunshot-02.mp3", ofType:nil)!
         let url = URL(fileURLWithPath: path)
         do {
             let sound = try AVAudioPlayer(contentsOf: url)
