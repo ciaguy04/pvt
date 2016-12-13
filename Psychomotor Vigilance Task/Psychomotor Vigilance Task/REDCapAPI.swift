@@ -37,7 +37,7 @@ class REDCapAPI {
         }
     }
 
-    static func postToURL (withData data:[String:Any], andContext context:[String:Any], fromCaller caller: Any) {
+    static func import_record (withData data:[String:Any], andContext context:[String:Any], fromCaller caller: Any) {
         //### REDCap API call requires combination of cURL and JSON
         var jsonString = "["
         for (key, value) in data{

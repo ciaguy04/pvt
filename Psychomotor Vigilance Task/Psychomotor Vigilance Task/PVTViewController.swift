@@ -134,7 +134,7 @@ class PVTViewController: UIViewController {
         } else {
             self.test_state_timer.invalidate()
             self.trial_countdown_timer.invalidate()
-            REDCapAPI.postToURL(withData: self.test_data.data_dict, andContext: self.test_data.context_dict, fromCaller: self)
+            REDCapAPI.import_record(withData: self.test_data.data_dict, andContext: self.test_data.context_dict, fromCaller: self)
             counter_view!.text! = "END TEST"
             show_end_test_alert()
         }
