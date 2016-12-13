@@ -51,7 +51,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     @IBAction func reset_pvt_index(_ sender: Any) {
         //#### Debugging code for beta testing ########
         //TODO: Remove when project goes to deployment
-        context.pvt_index = 0
+        context.pvt_index = 1
         navigationController!.popToRootViewController(animated: true)
     }
     

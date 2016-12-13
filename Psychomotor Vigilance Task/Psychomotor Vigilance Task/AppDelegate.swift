@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         let defaults = UserDefaults.standard
         if defaults.integer(forKey: ContextKeys.pvt_index) == 0 {
-            defaults.set(0, forKey: ContextKeys.pvt_index)
+            defaults.set(1, forKey: ContextKeys.pvt_index)
             defaults.synchronize()
         }
 

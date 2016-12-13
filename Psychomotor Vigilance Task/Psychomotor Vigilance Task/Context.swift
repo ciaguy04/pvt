@@ -74,8 +74,8 @@ class Context {
     }
 
     var event_name: String {
-        print (Context.PVT_NAMES[pvt_index] + "_pvt_arm_" + String(arm))                //debugging
-        return Context.PVT_NAMES[pvt_index] + "_pvt_arm_" + String(arm)
+        print ("pvt_" + String(pvt_index) + "_arm_" + String(arm))                //debugging
+        return "pvt_" + String(pvt_index) + "_arm_" + String(arm)
     }
     
     //MARK: -Methods
