@@ -17,30 +17,6 @@ struct ContextKeys{
 //TODO: - Convert into a 'singleton facade' to encapsulate persistence
 class Context {
     let PVT_DATA_COMPLETE = 1               //constants denote '1' (unverified) status in REDCap Project
-    static let PVT_NAMES = ["pre_day_1",    //constants for data fields in REDCap
-                     "post_day_1",
-                     "pre_day_2",
-                     "post_day_2",
-                     "pre_day_3",
-                     "post_day_3",
-                     "pre_day_4",
-                     "post_day_4",
-                     "pre_day_5",
-                     "post_day_5",
-                     "pre_day_6",
-                     "post_day_6",
-                     "pre_day_7",
-                     "post_day_7",
-                     "pre_night_1",
-                     "post_night_1",
-                     "pre_night_2",
-                     "post_night_2",
-                     "pre_night_3",
-                     "post_night_3",
-                     "pre_night_4",
-                     "post_night_4",
-                     "pre_night_5",
-                     "post_night_5"]
     
     //MARK: - Computed Properties
     var record: String? {

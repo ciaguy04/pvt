@@ -11,12 +11,6 @@ import UIKit
 import CoreData
 import Alamofire
 
-enum SubmissionStatus: String {
-    case no_connectivity = "An error has occurred.  Please check your internet connection.  If the error persists, please contact the study coordinator."
-    case api_call_error = "API Call Error"
-    case success = "Successfully submitted to REDCap! Thank you."
-}
-
 enum TrialState {
     case Active
     case Delay
@@ -42,7 +36,7 @@ class PVTViewController: UIViewController {
     
     //MARK: - Data Management Properties
     var test_data: Test
-    var submission_status: SubmissionStatus?
+    var rc_delegate = RCDelegate()
     
     //MARK: - Initializer
     required init?(coder aDecoder: NSCoder) {
@@ -134,7 +128,7 @@ class PVTViewController: UIViewController {
         } else {
             self.test_state_timer.invalidate()
             self.trial_countdown_timer.invalidate()
-            REDCapAPI.import_record(withData: self.test_data.data_dict, andContext: self.test_data.context_dict, fromCaller: self)
+            REDCapAPI.import_record(withData: self.test_data.data_dict, andContext: self.test_data.context_dict, withDelegate: self.rc_delegate)
             counter_view!.text! = "END TEST"
             show_end_test_alert()
         }

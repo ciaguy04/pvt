@@ -70,7 +70,7 @@ class TestResultVC: UIViewController {
 //    }
     
     @objc private func update_status () {
-        if let status = self.pvtvc.submission_status {
+        if let status = self.pvtvc.rc_delegate.submission_status {
             self.submission_pending.stopAnimating()
             if status == SubmissionStatus.success {
                 self.test_label.text! = status.rawValue

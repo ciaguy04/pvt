@@ -37,8 +37,8 @@ class REDCapAPI {
         }
     }
 
-    static func import_record (withData data:[String:Any], andContext context:[String:Any], fromCaller caller: Any) {
-        //### REDCap API call requires combination of cURL and JSON
+    static func import_record (withData data:[String:Any], andContext context:[String:Any], withDelegate delegate: Any) {
+        //### Building JSON String to add to data parameter for .post body
         var jsonString = "["
         for (key, value) in data{
             let jsonData : [String:Any] = ["record": context["record"] as! String,
@@ -69,19 +69,62 @@ class REDCapAPI {
             print(REDCapAPI.manager)
             
             if response.response == nil {
-                (caller as! PVTViewController).submission_status = SubmissionStatus.no_connectivity
+                (delegate as! RCDelegate).submission_status = SubmissionStatus.no_connectivity
                 //TODO: return to main screen +/- save PVT data to send at a later time.
             }
             if let rawJSONResponse = response.result.value {
                 if response.result.isSuccess && JSON(rawJSONResponse)["count"] == nil  {
-                    (caller as! PVTViewController).submission_status = SubmissionStatus.api_call_error
+                    (delegate as! RCDelegate).submission_status = SubmissionStatus.api_call_error
                 }
                 if response.result.isSuccess && JSON(rawJSONResponse)["count"] != nil  {
-                    (caller as! PVTViewController).submission_status = SubmissionStatus.success
+                    (delegate as! RCDelegate).submission_status = SubmissionStatus.success
                 }
             }
         }
-    //end comment
+        //end comment
         
     }
+    
+    static func export_events (fromArm arm: Int, withDelegate delegate: Any) {
+        
+        //Building headers for post method body - comment to avoid API calls during debugging above code -> see 'end comment'
+        let parameters: Parameters =
+            [   "token": TOKEN,
+                "content": "event",
+                "format": "json",
+                "returnFormat": "json",
+                "arm": String(arm)
+        ]
+        
+        //### Calling API
+        REDCapAPI.manager.request("https://redcap.vanderbilt.edu/api/", method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
+            print("Response: \(response.debugDescription)")
+            print("Result: \(response.result)")
+            print("Result.value: \(response.result.value)")
+            
+            
+            
+            if response.response == nil {
+                (delegate as! RCDelegate).submission_status = SubmissionStatus.arm_update_error
+            }
+            if let rawJSONResponse = response.result.value {
+                let json = JSON(rawJSONResponse)
+                print("rawJSONRespose: \(rawJSONResponse)")
+                print("JSONized: \(json)")
+                
+                if let error_text = json["error"].string {
+                    print("There was an error: \(error_text)")
+                    (delegate as! RCDelegate).submission_status = SubmissionStatus.api_call_error
+                } else if response.result.isSuccess  {
+                    print("Successful Submission: \(json)")
+                    (delegate as! RCDelegate).submission_status = SubmissionStatus.success
+                } else {
+                    print("not really sure what happened...")
+                }
+            }
+        }
+        //end comment
+        
+    }
+    
 }
