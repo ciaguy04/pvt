@@ -14,8 +14,10 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var pid: UITextField!
     @IBOutlet weak var specialty: UISegmentedControl!
     @IBOutlet weak var invalid_pid_label: UILabel!
+    @IBOutlet weak var submission_pending: UIActivityIndicatorView!
 
-    private var manual_update_requested = false
+    private var status_update_timer = Timer()
+    private var can_save_and_return = true
     private var start_segment_index: Int?
     var rc_delegate = RCDelegate()
     var context: Context = Context()
@@ -64,58 +66,94 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     
     func update_events() {
         let defaults = UserDefaults.standard
-        let root_vc = self.navigationController?.viewControllers.first
-        let delegate = (root_vc as! ViewController).rc_delegate
-        delegate.submission_status = nil
-        (root_vc as! ViewController).submission_pending.isHidden = false
-        (root_vc as! ViewController).submission_pending.startAnimating()
-        (root_vc as! ViewController).hide_start_pvt()
+        let delegate = self.rc_delegate
         REDCapAPI.export_events(fromArm: defaults.integer(forKey:ContextKeys.arm), withDelegate: delegate)
         print("RC API called!!")
     }
     
     private func needs_updating () -> Bool {
-        let defaults = UserDefaults.standard
+        //TODO: Likely needs more work
         if self.specialty.selectedSegmentIndex != self.start_segment_index! {
             print("Specialty Changed!!")
             return true
-        } else if defaults.bool(forKey: ContextKeys.is_first_run)  {
-            return true
         } else {
-            return self.manual_update_requested
+            //??return self.manual_update_requested
+            return false
         }
     }
     
     //MARK: - Actions
     @IBAction func reset_pvt_index(_ sender: Any) {
         //#### Debugging code for beta testing ########
-        //#### Used to resent pvt index and initialize arm
+        //#### Used to reset pvt index and initialize arm
         //TODO: Remove when project goes to deployment
         context.pvt_index = 1
         context.arm = 1
         context.record = ""
         
         navigationController!.popToRootViewController(animated: true)
+        //??let root_vc = self.navigationController?.viewControllers.first
     }
     
-    @IBAction func save_and_return(_ sender: Any) {
-        //same arm?
-        context.arm = (specialty.selectedSegmentIndex + 1)  //REDCap arm =(specialty index+1).
+    @IBAction func confirm_specialty(_ sender: Any) {
         
-        //start pid validation
-        let pid_validation_int = Int(pid.text!)
-        if pid.text!.characters.count == 6 && pid_validation_int != nil {
-            context.record = pid.text!
-            
-            //specialty changed? -> update event dictionary
-            context.is_first_run = false
-            if self.needs_updating() {
-                update_events()
-            }
-            navigationController!.popToRootViewController(animated: true)
-        } else {
-            invalid_pid_label.text = "Please enter a valid ID!"
+        //specialty changed? -> update event dictionary
+        if self.needs_updating() {
+            self.submission_pending.startAnimating()
+            self.can_save_and_return = false
+            update_events()
+            check_for_api_result()
         }
-        //end pid validation
+    }
+    
+    
+    @IBAction func save_and_return(_ sender: Any) {
+        if self.can_save_and_return {
+            
+            //start pid validation
+            let pid_validation_int = Int(pid.text!)
+            if pid.text!.characters.count == 6 && pid_validation_int != nil {
+                context.record = pid.text!
+                navigationController!.popToRootViewController(animated: true)
+            } else {
+                invalid_pid_label.textColor = UIColor.red
+                invalid_pid_label.text = "Please enter a valid ID!"
+            }
+            //end pid validation
+        } else {
+            invalid_pid_label.textColor = UIColor.red
+            invalid_pid_label.text = "Please wait for specialty to update or go home to cancel."
+        }
+    }
+    
+    //MARK: - Moved from View Controller
+    @objc private func update_status () {
+        print("running update_status()")
+        print("Submission status: \(self.rc_delegate.submission_status?.rawValue)")
+        if let status = self.rc_delegate.submission_status {
+            self.submission_pending.hidesWhenStopped = true
+            self.submission_pending.stopAnimating()
+            self.status_update_timer.invalidate()
+            if status == SubmissionStatus.success {
+                context.arm = (specialty.selectedSegmentIndex + 1)  //REDCap arm =(specialty index+1).
+                self.start_segment_index = specialty.selectedSegmentIndex
+                self.rc_delegate.persist_data(self.context)
+                invalid_pid_label.textColor = UIColor.green
+                invalid_pid_label.text = "Successfully updated."
+                self.can_save_and_return = true
+            } else {
+                print(rc_delegate.submission_status?.rawValue ?? "Not sure what happened...")
+                let alert = UIAlertController(title: "Error!", message: status.rawValue, preferredStyle: .alert)
+                let default_action = UIAlertAction(title: "OK", style: .cancel)
+                alert.addAction(default_action)
+                self.present(alert, animated: true, completion: nil)
+            }
+        } else {
+            print("Awaiting API response")
+        }
+    }
+    
+    private func check_for_api_result() {             //##
+        self.status_update_timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(update_status), userInfo: nil, repeats: true)
     }
 }

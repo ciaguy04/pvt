@@ -30,7 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         if defaults.string(forKey: ContextKeys.REDCap_record) == nil {
-            defaults.set(true, forKey: ContextKeys.is_first_run)
             defaults.synchronize()
             print("setting ContextKeys.REDCap_record")
             defaults.set("", forKey: ContextKeys.REDCap_record)

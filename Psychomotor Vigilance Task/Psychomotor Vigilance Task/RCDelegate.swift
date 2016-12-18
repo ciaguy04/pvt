@@ -13,7 +13,7 @@ enum SubmissionStatus: String {
     case success = "Successfully submitted to REDCap! Thank you."
     case no_connectivity = "An error has occurred.  Please check your internet connection.  If the error persists, please contact the study coordinator."
     case api_call_error = "API Call Error"
-    case arm_update_error = "An error has occurred.  Please check your internet connection and retry to update your specialty.  If the error persists, please contact the study coordinator."
+    case arm_update_error = "An error has occurred.  Check your internet connection and retry to update your specialty.  If the error persists, please contact the study coordinator."
 }
 
 class RCDelegate {
