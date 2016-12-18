@@ -32,17 +32,6 @@ class Context {
         }
     }
     
-    var event_list: [[String:String]] {
-        get { let defaults = UserDefaults.standard
-            return defaults.array(forKey: ContextKeys.event_list) as! [[String : String]]
-        } set {
-            let defaults = UserDefaults.standard
-            print("Setting event_list")
-            defaults.set(newValue, forKey: ContextKeys.event_list)
-            defaults.synchronize()
-        }
-    }
-    
     var arm: Int {
         get { let defaults = UserDefaults.standard
             return defaults.integer(forKey:ContextKeys.arm)
@@ -59,6 +48,27 @@ class Context {
         } set {
             let defaults = UserDefaults.standard
             defaults.set(newValue, forKey: ContextKeys.pvt_index)
+            defaults.synchronize()
+        }
+    }
+    
+    var event_list: [[String:String]] {
+        get { let defaults = UserDefaults.standard
+            return defaults.array(forKey: ContextKeys.event_list) as! [[String : String]]
+        } set {
+            let defaults = UserDefaults.standard
+            print("Setting event_list")
+            defaults.set(newValue, forKey: ContextKeys.event_list)
+            defaults.synchronize()
+        }
+    }
+    
+    var start_date: String? {
+        get { let defaults = UserDefaults.standard
+            return defaults.string(forKey: ContextKeys.start_date)
+        } set {
+            let defaults = UserDefaults.standard
+            defaults.set(newValue, forKey: ContextKeys.start_date)
             defaults.synchronize()
         }
     }

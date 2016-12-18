@@ -128,4 +128,48 @@ class REDCapAPI {
         
     }
     
+    static func export_record (fromID record_id: String, withDelegate delegate: Any) {
+        
+        //Building headers for post method body - comment to avoid API calls during debugging above code -> see 'end comment'
+        let parameters: Parameters =
+            [   "token": TOKEN,
+                "content": "record",
+                "format": "json",
+                "type": "eav",
+                "record": record_id,
+                "fields": "day_zero"
+        ]
+        
+        //### Calling API
+        REDCapAPI.manager.request("https://redcap.vanderbilt.edu/api/", method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
+            print("Response: \(response.debugDescription)")
+            print("Result: \(response.result)")
+            print("Result.value: \(response.result.value)")
+            
+            
+            /*
+            if response.response == nil {
+                (delegate as! RCDelegate).submission_status = SubmissionStatus.arm_update_error
+            }
+            if let rawJSONResponse = response.result.value {
+                let json = JSON(rawJSONResponse)
+                print("rawJSONRespose: \(rawJSONResponse)")
+                print("JSONized: \(json)")
+                
+                if let error_text = json["error"].string {
+                    print("There was an error: \(error_text)")
+                    (delegate as! RCDelegate).submission_status = SubmissionStatus.api_call_error
+                } else if response.result.isSuccess  {
+                    print("Successful Submission: \(json.array!)")
+                    (delegate as! RCDelegate).submission_status = SubmissionStatus.success
+                    (delegate as! RCDelegate).data = json.array
+                } else {
+                    print("not really sure what happened...")
+                }
+            }
+ */
+        }
+        //end comment
+    }
+    
 }

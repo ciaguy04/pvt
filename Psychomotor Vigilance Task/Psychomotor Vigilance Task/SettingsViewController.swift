@@ -29,6 +29,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialize_views()
+        REDCapAPI.export_record(fromID: self.context.record!, withDelegate: self.rc_delegate)
     }
 
     override func didReceiveMemoryWarning() {
