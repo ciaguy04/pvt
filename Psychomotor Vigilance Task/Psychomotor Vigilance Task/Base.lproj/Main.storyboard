@@ -307,25 +307,25 @@
                                     <action selector="reset_pvt_index:" destination="VtE-sG-nI8" eventType="touchUpInside" id="DXO-Fd-wAd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OIi-pG-30r">
-                                <rect key="frame" x="112.5" y="292" width="150" height="30"/>
-                                <color key="backgroundColor" red="0.076923094689846039" green="0.029708905145525932" blue="0.091617114841938019" alpha="0.90056573279999996" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="F1A-jH-OtU"/>
-                                    <constraint firstAttribute="width" constant="150" id="QMw-RB-shx"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Confirm Specialty">
-                                    <color key="titleColor" red="1" green="0.07482077878" blue="0.053801445959999999" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="confirm_specialty:" destination="VtE-sG-nI8" eventType="touchUpInside" id="sos-nW-kck"/>
-                                </connections>
-                            </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="lXC-dI-Pqw">
                                 <rect key="frame" x="169" y="113" width="37" height="37"/>
                                 <color key="color" red="1" green="0.93269016059999998" blue="0.1039846348" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dlB-kL-265">
+                                <rect key="frame" x="112.5" y="292" width="150" height="30"/>
+                                <color key="backgroundColor" red="0.076923094689846039" green="0.029708905145525932" blue="0.091617114841938019" alpha="0.88389008619999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="N52-zc-Oez"/>
+                                    <constraint firstAttribute="width" constant="150" id="u0F-Bj-MIC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Sync Changes">
+                                    <color key="titleColor" red="1" green="0.07482077878" blue="0.053801445959999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="sync_changes:" destination="VtE-sG-nI8" eventType="touchUpInside" id="Xzj-vs-rDo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.16861122846603394" green="0.16863656044006348" blue="0.16860261559486389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -336,16 +336,16 @@
                             <constraint firstItem="JTC-Kp-56T" firstAttribute="top" secondItem="N6U-E9-0Sd" secondAttribute="bottom" constant="25" id="Gvc-Bo-zmq"/>
                             <constraint firstItem="lXC-dI-Pqw" firstAttribute="top" secondItem="K7o-p8-uJJ" secondAttribute="bottom" constant="10" id="HCV-Pk-CnV"/>
                             <constraint firstItem="K7o-p8-uJJ" firstAttribute="top" secondItem="7Ze-oP-Xjx" secondAttribute="bottom" constant="22" id="Igr-af-22I"/>
+                            <constraint firstItem="kcP-C2-BoX" firstAttribute="top" secondItem="dlB-kL-265" secondAttribute="bottom" constant="15" id="Ptt-BB-FM7"/>
+                            <constraint firstItem="dlB-kL-265" firstAttribute="centerX" secondItem="fKf-yJ-Y4O" secondAttribute="centerX" id="SZv-md-eiR"/>
                             <constraint firstItem="7Ze-oP-Xjx" firstAttribute="centerX" secondItem="fKf-yJ-Y4O" secondAttribute="centerX" id="bB9-3K-mQy"/>
-                            <constraint firstItem="OIi-pG-30r" firstAttribute="centerX" secondItem="fKf-yJ-Y4O" secondAttribute="centerX" id="eVs-8B-DEf"/>
-                            <constraint firstItem="kcP-C2-BoX" firstAttribute="top" secondItem="OIi-pG-30r" secondAttribute="bottom" constant="15" id="enh-WK-SCe"/>
                             <constraint firstItem="K7o-p8-uJJ" firstAttribute="centerX" secondItem="7Ze-oP-Xjx" secondAttribute="centerX" id="fZd-3A-xir"/>
                             <constraint firstItem="N6U-E9-0Sd" firstAttribute="centerX" secondItem="fKf-yJ-Y4O" secondAttribute="centerX" id="jbe-wJ-ITh"/>
                             <constraint firstItem="N6U-E9-0Sd" firstAttribute="centerX" secondItem="K7o-p8-uJJ" secondAttribute="centerX" id="khN-FG-b7W"/>
+                            <constraint firstItem="dlB-kL-265" firstAttribute="top" secondItem="JTC-Kp-56T" secondAttribute="bottom" constant="30" id="mxQ-IG-FAC"/>
                             <constraint firstItem="7Ze-oP-Xjx" firstAttribute="top" secondItem="pMN-eG-aZK" secondAttribute="bottom" constant="30" id="ofz-Nc-n0o"/>
                             <constraint firstItem="kcP-C2-BoX" firstAttribute="centerX" secondItem="fKf-yJ-Y4O" secondAttribute="centerX" id="pA6-qS-iSl"/>
                             <constraint firstItem="zmX-iN-hDW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="kcP-C2-BoX" secondAttribute="bottom" constant="50" id="suW-Z2-HJa"/>
-                            <constraint firstItem="OIi-pG-30r" firstAttribute="top" secondItem="JTC-Kp-56T" secondAttribute="bottom" constant="30" id="yvh-a7-AJC"/>
                         </constraints>
                     </view>
                     <toolbarItems>

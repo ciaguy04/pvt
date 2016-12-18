@@ -19,7 +19,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     private var status_update_timer = Timer()
     private var can_save_and_return = true
     private var start_segment_index: Int?
-    var rc_delegate = RCDelegate()
+    var rc_delegate: [String: RCDelegate] = [:]
     var context: Context = Context()
     
     //TODO: create User class and factor out relevant properties
@@ -29,7 +29,6 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialize_views()
-        REDCapAPI.export_record(fromID: self.context.record!, withDelegate: self.rc_delegate)
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,9 +65,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     }
     
     func update_events() {
-        let defaults = UserDefaults.standard
-        let delegate = self.rc_delegate
-        REDCapAPI.export_events(fromArm: defaults.integer(forKey:ContextKeys.arm), withDelegate: delegate)
+        self.rc_delegate["event_list"] = RCDelegate()
+        REDCapAPI.export_events(fromArm: context.arm, withDelegate: self.rc_delegate["event_list"]!)
         print("RC API called!!")
     }
     
@@ -80,6 +78,14 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         } else {
             //??return self.manual_update_requested
             return false
+        }
+    }
+    
+    private func find_start_date() {
+        if context.start_date == nil {
+            REDCapAPI.export_record(fromID: self.context.record!, withDelegate: self.rc_delegate)
+        } else  {
+            print(context.start_date?.debugDescription)
         }
     }
     
@@ -96,8 +102,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         //??let root_vc = self.navigationController?.viewControllers.first
     }
     
-    @IBAction func confirm_specialty(_ sender: Any) {
-        
+    @IBAction func sync_changes(_ sender: Any) {
         //specialty changed? -> update event dictionary
         if self.needs_updating() {
             self.submission_pending.startAnimating()
@@ -130,20 +135,20 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     //MARK: - Moved from View Controller
     @objc private func update_status () {
         print("running update_status()")
-        print("Submission status: \(self.rc_delegate.submission_status?.rawValue)")
-        if let status = self.rc_delegate.submission_status {
+        print("Submission status: \(self.rc_delegate["event_list"]!.submission_status?.rawValue)")
+        if let status = self.rc_delegate["event_list"]!.submission_status {
             self.submission_pending.hidesWhenStopped = true
             self.submission_pending.stopAnimating()
             self.status_update_timer.invalidate()
             if status == SubmissionStatus.success {
                 context.arm = (specialty.selectedSegmentIndex + 1)  //REDCap arm =(specialty index+1).
                 self.start_segment_index = specialty.selectedSegmentIndex
-                self.rc_delegate.persist_data(self.context)
+                self.rc_delegate["event_list"]!.persist_data(self.context)
                 invalid_pid_label.textColor = UIColor.green
                 invalid_pid_label.text = "Successfully updated."
                 self.can_save_and_return = true
             } else {
-                print(rc_delegate.submission_status?.rawValue ?? "Not sure what happened...")
+                print(self.rc_delegate["event_list"]!.submission_status?.rawValue ?? "Not sure what happened...")
                 let alert = UIAlertController(title: "Error!", message: status.rawValue, preferredStyle: .alert)
                 let default_action = UIAlertAction(title: "OK", style: .cancel)
                 alert.addAction(default_action)
