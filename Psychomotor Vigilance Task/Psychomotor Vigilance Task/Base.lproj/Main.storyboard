@@ -322,7 +322,7 @@
                                     <constraint firstAttribute="height" constant="30" id="aYV-O7-lDP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Reset Persistence">
+                                <state key="normal" title="Initialize">
                                     <color key="titleColor" red="1" green="0.07482077878" blue="0.053801445959999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>

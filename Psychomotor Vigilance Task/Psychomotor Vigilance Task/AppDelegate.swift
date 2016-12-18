@@ -24,14 +24,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         if defaults.integer(forKey: ContextKeys.arm) == 0 {
-            print("setting arm")
             defaults.set(1, forKey: ContextKeys.arm)
+            print("initializing arm to 1")
             defaults.synchronize()
         }
         
         if defaults.string(forKey: ContextKeys.REDCap_record) == nil {
+            defaults.set(true, forKey: ContextKeys.is_first_run)
+            defaults.synchronize()
             print("setting ContextKeys.REDCap_record")
-            defaults.set("", forKey: ContextKeys.arm)
+            defaults.set("", forKey: ContextKeys.REDCap_record)
             defaults.synchronize()
         }
         

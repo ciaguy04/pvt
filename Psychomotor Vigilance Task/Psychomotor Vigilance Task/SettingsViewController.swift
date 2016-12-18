@@ -75,8 +75,11 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func needs_updating () -> Bool {
+        let defaults = UserDefaults.standard
         if self.specialty.selectedSegmentIndex != self.start_segment_index! {
             print("Specialty Changed!!")
+            return true
+        } else if defaults.bool(forKey: ContextKeys.is_first_run)  {
             return true
         } else {
             return self.manual_update_requested
@@ -86,8 +89,12 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     //MARK: - Actions
     @IBAction func reset_pvt_index(_ sender: Any) {
         //#### Debugging code for beta testing ########
+        //#### Used to resent pvt index and initialize arm
         //TODO: Remove when project goes to deployment
         context.pvt_index = 1
+        context.arm = 1
+        context.record = ""
+        
         navigationController!.popToRootViewController(animated: true)
     }
     
@@ -101,6 +108,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
             context.record = pid.text!
             
             //specialty changed? -> update event dictionary
+            context.is_first_run = false
             if self.needs_updating() {
                 update_events()
             }

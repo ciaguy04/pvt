@@ -116,8 +116,9 @@ class REDCapAPI {
                     print("There was an error: \(error_text)")
                     (delegate as! RCDelegate).submission_status = SubmissionStatus.api_call_error
                 } else if response.result.isSuccess  {
-                    print("Successful Submission: \(json)")
+                    print("Successful Submission: \(json.array!)")
                     (delegate as! RCDelegate).submission_status = SubmissionStatus.success
+                    (delegate as! RCDelegate).data = json.array
                 } else {
                     print("not really sure what happened...")
                 }

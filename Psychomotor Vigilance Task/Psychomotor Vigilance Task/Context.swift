@@ -12,11 +12,15 @@ struct ContextKeys{
     static let REDCap_record = "REDCap_record"          // aka pid
     static let arm = "arm"                              // aka specialty + 1
     static let pvt_index = "pvt_index"
+    static let is_first_run = "is_first_run"
+    static let event_list = "event_list"
+    static let start_date = "start_date"
 }
 
-//TODO: - Convert into a 'singleton facade' to encapsulate persistence
 class Context {
-    let PVT_DATA_COMPLETE = 1               //constants denote '1' (unverified) status in REDCap Project
+//TODO: Convert into a singleton object to encapsulate persistence
+    
+    let PVT_DATA_COMPLETE = 1               //constant denotes '1' (unverified) status in REDCap Project
     
     //MARK: - Computed Properties
     var record: String? {
@@ -25,6 +29,27 @@ class Context {
         } set {
             let defaults = UserDefaults.standard
             defaults.set(newValue, forKey: ContextKeys.REDCap_record)
+            defaults.synchronize()
+        }
+    }
+    
+    var is_first_run: Bool {
+        get { let defaults = UserDefaults.standard
+            return defaults.bool(forKey:ContextKeys.is_first_run)
+        } set {
+            let defaults = UserDefaults.standard
+            defaults.set(newValue, forKey: ContextKeys.is_first_run)
+            defaults.synchronize()
+        }
+    }
+    
+    var event_list: [[String:String]] {
+        get { let defaults = UserDefaults.standard
+            return defaults.array(forKey: ContextKeys.event_list) as! [[String : String]]
+        } set {
+            let defaults = UserDefaults.standard
+            print("Setting event_list")
+            defaults.set(newValue, forKey: ContextKeys.event_list)
             defaults.synchronize()
         }
     }
