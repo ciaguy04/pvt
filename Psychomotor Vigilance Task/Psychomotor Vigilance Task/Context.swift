@@ -20,6 +20,7 @@ class Context {
 //TODO: Convert into a singleton object to encapsulate persistence
     
     let PVT_DATA_COMPLETE = 1               //constant denotes '1' (unverified) status in REDCap Project
+    let PVT_VECTOR = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
     
     //MARK: - Computed Properties
     var record: String? {
@@ -43,7 +44,8 @@ class Context {
     }
     
     var pvt_index: Int {                              //currently due pvt_index
-        get { let defaults = UserDefaults.standard
+        get {
+            let defaults = UserDefaults.standard
             return defaults.integer(forKey: ContextKeys.pvt_index)
         } set {
             let defaults = UserDefaults.standard
@@ -63,9 +65,9 @@ class Context {
         }
     }
     
-    var start_date: String? {
+    var start_date: Date? {
         get { let defaults = UserDefaults.standard
-            return defaults.string(forKey: ContextKeys.start_date)
+            return defaults.object(forKey: ContextKeys.start_date) as! Date?
         } set {
             let defaults = UserDefaults.standard
             defaults.set(newValue, forKey: ContextKeys.start_date)

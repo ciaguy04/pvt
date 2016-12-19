@@ -13,16 +13,17 @@ enum SubmissionStatus: String {
     case success = "Successfully submitted to REDCap! Thank you."
     case no_connectivity = "An error has occurred.  Please check your internet connection.  If the error persists, please contact the study coordinator."
     case api_call_error = "API Call Error"
-    case arm_update_error = "An error has occurred.  Check your internet connection and retry to update your specialty.  If the error persists, please contact the study coordinator."
+    case update_error = "An error has occurred.  Check your internet connection and retry to sync your settings.  If the error persists, please contact the study coordinator."
 }
 
 class RCDelegate {
     var submission_status: SubmissionStatus?
     var data: [JSON]?
     
-    func persist_data(_ context: Context) {
+    //MARK: -Event Data Methods
+    func persist_event_data(_ context: Context) {
         let events = self.filter_events()
-        self.update_dictionary(context, withJSONList: events)
+        self.update_event_dictionary(context, withJSONList: events)
     }
     
     private func filter_events() -> [JSON] {
@@ -39,12 +40,21 @@ class RCDelegate {
         return filtered_list
     }
     
-    private func update_dictionary(_ context: Context, withJSONList jsonList: [JSON]) {
+    private func update_event_dictionary(_ context: Context, withJSONList jsonList: [JSON]) {
         var dictList: [[String:String]] = []
         for event in jsonList {
             let dictObj = event.dictionaryObject! as! [String:String]
             dictList.append(dictObj)
         }
         context.event_list = dictList
+    }
+    
+    //MARK: -Start Date Methods
+    func persist_start_date_data(_ context: Context) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        if let date = dateFormatter.date(from: self.data![0]["value"].stringValue) {
+            context.start_date = date
+        }
     }
 }

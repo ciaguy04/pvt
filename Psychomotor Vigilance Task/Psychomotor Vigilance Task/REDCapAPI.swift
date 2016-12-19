@@ -105,7 +105,7 @@ class REDCapAPI {
             
             
             if response.response == nil {
-                (delegate as! RCDelegate).submission_status = SubmissionStatus.arm_update_error
+                (delegate as! RCDelegate).submission_status = SubmissionStatus.update_error
             }
             if let rawJSONResponse = response.result.value {
                 let json = JSON(rawJSONResponse)
@@ -146,10 +146,8 @@ class REDCapAPI {
             print("Result: \(response.result)")
             print("Result.value: \(response.result.value)")
             
-            
-            /*
             if response.response == nil {
-                (delegate as! RCDelegate).submission_status = SubmissionStatus.arm_update_error
+                (delegate as! RCDelegate).submission_status = SubmissionStatus.update_error
             }
             if let rawJSONResponse = response.result.value {
                 let json = JSON(rawJSONResponse)
@@ -167,9 +165,6 @@ class REDCapAPI {
                     print("not really sure what happened...")
                 }
             }
- */
         }
-        //end comment
     }
-    
 }
