@@ -9,8 +9,7 @@
 import Foundation
 
 struct ContextKeys{
-    static let REDCap_record = "REDCap_record"          // aka pid
-    static let arm = "arm"                              // aka specialty + 1
+    static let REDCap_record = "REDCap_record"          // aka pid                             // aka specialty + 1
     static let pvt_index = "pvt_index"
     static let event_list = "event_list"
     static let start_date = "start_date"
@@ -33,16 +32,6 @@ class Context {
         }
     }
     
-    var arm: Int {
-        get { let defaults = UserDefaults.standard
-            return defaults.integer(forKey:ContextKeys.arm)
-        } set {
-            let defaults = UserDefaults.standard
-            defaults.set(newValue, forKey: ContextKeys.arm)
-            defaults.synchronize()
-        }
-    }
-    
     var pvt_index: Int {                              //currently due pvt_index
         get {
             let defaults = UserDefaults.standard
@@ -54,9 +43,9 @@ class Context {
         }
     }
     
-    var event_list: [[String:String]] {
+    var event_list: [[String:String]]? {
         get { let defaults = UserDefaults.standard
-            return defaults.array(forKey: ContextKeys.event_list) as! [[String : String]]
+            return defaults.array(forKey: ContextKeys.event_list) as! [[String : String]]?
         } set {
             let defaults = UserDefaults.standard
             print("Setting event_list")
@@ -76,8 +65,8 @@ class Context {
     }
 
     var event_name: String {
-        print ("pvt_" + String(pvt_index) + "_arm_" + String(arm))                //debugging
-        return "pvt_" + String(pvt_index) + "_arm_" + String(arm)
+        print ("pvt_" + String(pvt_index) + "_arm_1")                //debugging
+        return "pvt_" + String(pvt_index) + "_arm_1"
     }
     
     //MARK: -Methods

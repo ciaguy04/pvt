@@ -12,13 +12,12 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: - Properties
     @IBOutlet weak var pid: UITextField!
-    @IBOutlet weak var specialty: UISegmentedControl!
     @IBOutlet weak var invalid_pid_label: UILabel!
     @IBOutlet weak var submission_pending: UIActivityIndicatorView!
 
     private var event_update_timer = Timer()
     private var start_date_update_timer = Timer()
-    private var start_segment_index: Int?
+    private var start_pid: String?
     private var can_save_and_return = true
     var rc_delegate: [String: RCDelegate] = [:]
     var context: Context = Context()
@@ -60,10 +59,9 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         pid.delegate = self
         if let pid_text = context.record {
             self.pid.text = pid_text
+            self.start_pid = pid_text
+            print("Start PID: \(self.start_pid!)")
         }
-        self.specialty.selectedSegmentIndex = context.arm - 1
-        self.start_segment_index = context.arm-1
-        print("Start Segment Index: \(self.start_segment_index!)")
     }
     
     private func validate_pid() -> Bool {
@@ -75,81 +73,19 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func update_events() {                                                  //########%%
+    //MARK: Get Event API Call Methods
+    private func update_events() {                                                  //########%%
         self.rc_delegate[ContextKeys.event_list] = RCDelegate()
-        REDCapAPI.export_events(fromArm: context.arm, withDelegate: self.rc_delegate[ContextKeys.event_list]!)
+        REDCapAPI.export_events(fromArm: 1, withDelegate: self.rc_delegate[ContextKeys.event_list]!)
         print("RC API called!!")
     }
     
-    private func needs_updating () -> Bool {                                //########%%
-        if self.specialty.selectedSegmentIndex != self.start_segment_index! {
-            print("Specialty Changed!!")
-            return true
-        } else {
-            //??return self.manual_update_requested
-            return false
-        }
+    private func check_for_event_api_call() {             //########%%
+        self.event_update_timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(update_event_status), userInfo: nil, repeats: true)
     }
     
-    private func find_start_date() {
-        self.rc_delegate[ContextKeys.start_date] = RCDelegate()
-        REDCapAPI.export_record(fromID: self.context.record!, withDelegate: self.rc_delegate[ContextKeys.start_date]!)
-    }
-    
-    //MARK: - Actions
-    @IBAction func reset_pvt_index(_ sender: Any) {
-        //#### Debugging code for beta testing ########
-        //#### Used to reset pvt index and initialize arm
-        //TODO: Remove when project goes to deployment
-        context.pvt_index = 1
-        context.arm = 1
-        context.record = ""
-        context.start_date = nil
-        context.event_list = [[:]]
-        
-        navigationController!.popToRootViewController(animated: true)
-        //??let root_vc = self.navigationController?.viewControllers.first
-    }
-    
-    @IBAction func sync_changes(_ sender: Any) {            //########%%%%%%%%%%%%######### <when lost - return here> ######$$$%%%%%
-        //specialty changed? -> update event dictionary
-        if self.needs_updating() {
-            self.can_save_and_return = false
-            update_events()
-            check_for_event_api_call()
-        }
-        
-        if validate_pid() {
-            if context.start_date == nil {
-                context.record = pid.text!
-                find_start_date()
-                check_for_start_date_api_call()
-            }
-        } else {
-            invalid_pid_label.textColor = UIColor.red
-            invalid_pid_label.text = "Please enter a valid ID!"
-        }
-    }
-    
-    
-    @IBAction func save_and_return(_ sender: Any) {
-        if self.can_save_and_return {
-            if validate_pid() {
-                context.record = pid.text!
-                navigationController!.popToRootViewController(animated: true)
-            } else {
-                invalid_pid_label.textColor = UIColor.red
-                invalid_pid_label.text = "Please enter a valid ID!"
-            }
-        } else {
-            invalid_pid_label.textColor = UIColor.red
-            invalid_pid_label.text = "Please wait for specialty to update or go home to cancel."
-        }
-    }
-    
-    //MARK: - API result handlers
     @objc private func update_event_status () {
-        print("running update_event_status()")
+        print("Async Loop: running update_event_status()")
         print("Submission status: \(self.rc_delegate[ContextKeys.event_list]!.submission_status?.rawValue)")
         self.submission_pending.startAnimating()
         if let status = self.rc_delegate[ContextKeys.event_list]!.submission_status {
@@ -157,8 +93,6 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
             self.submission_pending.stopAnimating()
             self.event_update_timer.invalidate()
             if status == SubmissionStatus.success {
-                context.arm = (specialty.selectedSegmentIndex + 1)  //REDCap arm =(specialty index+1).
-                self.start_segment_index = specialty.selectedSegmentIndex
                 self.rc_delegate[ContextKeys.event_list]!.persist_event_data(self.context)
                 invalid_pid_label.textColor = UIColor.green
                 invalid_pid_label.text = "Successfully updated."
@@ -175,10 +109,28 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    //MARK: Start Date API Call Methods
+    private func pid_has_changed() -> Bool {
+        if self.start_pid! != self.pid.text! {
+            print("pid changed!")
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    private func find_start_date() {
+        self.rc_delegate[ContextKeys.start_date] = RCDelegate()
+        REDCapAPI.export_record(fromID: self.context.record!, withDelegate: self.rc_delegate[ContextKeys.start_date]!)
+    }
+    
+    private func check_for_start_date_api_call() {
+        self.start_date_update_timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(update_start_date_status), userInfo: nil, repeats: true)
+    }
+    
     @objc private func update_start_date_status () {
-        print("running update_start_date_status()")
+        print("Async Loop: running update_start_date_status()")
         print("Submission status: \(self.rc_delegate[ContextKeys.start_date]!.submission_status?.rawValue)")
-        self.submission_pending.startAnimating()
         if let status = self.rc_delegate[ContextKeys.start_date]!.submission_status {
             self.submission_pending.hidesWhenStopped = true
             self.submission_pending.stopAnimating()
@@ -200,11 +152,62 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    private func check_for_event_api_call() {             //########%%
-        self.event_update_timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(update_event_status), userInfo: nil, repeats: true)
+    //MARK: - Actions
+    @IBAction func reset_pvt_index(_ sender: Any) {
+        //#### Debugging code for beta testing ########
+        //#### Used to reset pvt index and initialize arm
+        //TODO: Remove when project goes to deployment
+        context.pvt_index = 1
+        context.record = ""
+        context.start_date = nil
+        context.event_list = nil
+        
+        navigationController!.popToRootViewController(animated: true)
+        //??let root_vc = self.navigationController?.viewControllers.first
     }
     
-    private func check_for_start_date_api_call() {
-        self.start_date_update_timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(update_start_date_status), userInfo: nil, repeats: true)
+    @IBAction func sync_changes(_ sender: Any) {            //########%%%%%%%%%%%%######### <when lost - return here> ######$$$%%%%%
+        
+        //specialty changed? -> update event dictionary
+        if validate_pid() {
+            if context.start_date == nil || pid_has_changed() {
+                self.start_pid = pid.text!
+                self.submission_pending.startAnimating()
+                context.record = pid.text!
+                find_start_date()
+                check_for_start_date_api_call()
+                print("Start Date: \(self.context.start_date)")
+            }
+        } else {
+            invalid_pid_label.textColor = UIColor.red
+            invalid_pid_label.text = "Please enter a valid ID!"
+        }
+        if context.event_list == nil  {
+            self.submission_pending.startAnimating()
+            self.can_save_and_return = false
+            update_events()
+            check_for_event_api_call()
+        }
+    }
+    
+    
+    @IBAction func save_and_return(_ sender: Any) {
+        if context.start_date != nil || !pid_has_changed() {
+            if self.can_save_and_return{
+                if validate_pid() {
+                    context.record = pid.text!
+                    navigationController!.popToRootViewController(animated: true)
+                } else {
+                    invalid_pid_label.textColor = UIColor.red
+                    invalid_pid_label.text = "Please enter a valid ID!"
+                }
+            } else {
+                invalid_pid_label.textColor = UIColor.red
+                invalid_pid_label.text = "Please wait for application to update or go back to cancel."
+            }
+        } else {
+            invalid_pid_label.textColor = UIColor.red
+            invalid_pid_label.text = "Please sync with REDCap."
+        }
     }
 }

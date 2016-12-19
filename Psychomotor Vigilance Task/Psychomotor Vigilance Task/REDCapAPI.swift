@@ -98,9 +98,9 @@ class REDCapAPI {
         
         //### Calling API
         REDCapAPI.manager.request("https://redcap.vanderbilt.edu/api/", method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
-            print("Response: \(response.debugDescription)")
-            print("Result: \(response.result)")
-            print("Result.value: \(response.result.value)")
+            //print("Response: \(response.debugDescription)")
+            //print("Result: \(response.result)")
+            //print("Result.value: \(response.result.value)")
             
             
             
@@ -109,14 +109,12 @@ class REDCapAPI {
             }
             if let rawJSONResponse = response.result.value {
                 let json = JSON(rawJSONResponse)
-                print("rawJSONRespose: \(rawJSONResponse)")
-                print("JSONized: \(json)")
                 
                 if let error_text = json["error"].string {
                     print("There was an error: \(error_text)")
                     (delegate as! RCDelegate).submission_status = SubmissionStatus.api_call_error
                 } else if response.result.isSuccess  {
-                    print("Successful Submission: \(json.array!)")
+                    //print("Successful Submission: \(json.array!)")
                     (delegate as! RCDelegate).submission_status = SubmissionStatus.success
                     (delegate as! RCDelegate).data = json.array
                 } else {
@@ -142,9 +140,9 @@ class REDCapAPI {
         
         //### Calling API
         REDCapAPI.manager.request("https://redcap.vanderbilt.edu/api/", method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
-            print("Response: \(response.debugDescription)")
-            print("Result: \(response.result)")
-            print("Result.value: \(response.result.value)")
+            //print("Response: \(response.debugDescription)")
+            //print("Result: \(response.result)")
+            //print("Result.value: \(response.result.value)")
             
             if response.response == nil {
                 (delegate as! RCDelegate).submission_status = SubmissionStatus.update_error

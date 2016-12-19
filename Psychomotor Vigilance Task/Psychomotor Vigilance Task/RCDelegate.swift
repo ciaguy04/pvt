@@ -36,7 +36,6 @@ class RCDelegate {
                 }
             }
         }
-        print("Filtered List: \(filtered_list.debugDescription)")
         return filtered_list
     }
     
@@ -52,9 +51,11 @@ class RCDelegate {
     //MARK: -Start Date Methods
     func persist_start_date_data(_ context: Context) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        if let date = dateFormatter.date(from: self.data![0]["value"].stringValue) {
+        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm Z"
+        let dateString = self.data![0]["value"].stringValue + " 00:00 -0600"
+        if let date = dateFormatter.date(from: dateString) {
             context.start_date = date
+            print("Start Date: \(context.start_date)")
         }
     }
 }

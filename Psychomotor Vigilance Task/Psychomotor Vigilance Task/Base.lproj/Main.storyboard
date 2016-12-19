@@ -269,19 +269,6 @@
                                 <color key="textColor" red="1" green="0.93269016059999998" blue="0.1039846348" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JTC-Kp-56T" userLabel="SpecialtyPicker">
-                                <rect key="frame" x="27" y="222" width="321" height="41"/>
-                                <color key="backgroundColor" red="0.10614491254091263" green="0.069230370223522186" blue="0.31881663203239441" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="3KM-W1-3Lp"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="IM"/>
-                                    <segment title="Neurology"/>
-                                    <segment title="EGS"/>
-                                </segments>
-                                <color key="tintColor" red="1" green="0.93269016059999998" blue="0.1039846348" alpha="1" colorSpace="calibratedRGB"/>
-                            </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N6U-E9-0Sd">
                                 <rect key="frame" x="58" y="117" width="260" height="80"/>
                                 <constraints>
@@ -293,7 +280,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcP-C2-BoX">
-                                <rect key="frame" x="112.5" y="337" width="150" height="30"/>
+                                <rect key="frame" x="112.5" y="272" width="150" height="30"/>
                                 <color key="backgroundColor" red="0.076923094689846039" green="0.029708905145525932" blue="0.091617114841938019" alpha="0.88389008619999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="UJ4-29-24Q"/>
@@ -312,7 +299,7 @@
                                 <color key="color" red="1" green="0.93269016059999998" blue="0.1039846348" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dlB-kL-265">
-                                <rect key="frame" x="112.5" y="292" width="150" height="30"/>
+                                <rect key="frame" x="112.5" y="227" width="150" height="30"/>
                                 <color key="backgroundColor" red="0.076923094689846039" green="0.029708905145525932" blue="0.091617114841938019" alpha="0.88389008619999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="N52-zc-Oez"/>
@@ -330,10 +317,8 @@
                         <color key="backgroundColor" red="0.16861122846603394" green="0.16863656044006348" blue="0.16860261559486389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="N6U-E9-0Sd" firstAttribute="top" secondItem="K7o-p8-uJJ" secondAttribute="bottom" constant="14" id="3c5-lN-RoC"/>
-                            <constraint firstItem="JTC-Kp-56T" firstAttribute="leading" secondItem="fKf-yJ-Y4O" secondAttribute="leadingMargin" constant="11" id="6ho-lS-N7d"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="JTC-Kp-56T" secondAttribute="trailing" constant="11" id="ADa-RK-uuW"/>
                             <constraint firstItem="lXC-dI-Pqw" firstAttribute="centerX" secondItem="fKf-yJ-Y4O" secondAttribute="centerX" id="E8W-4N-Aly"/>
-                            <constraint firstItem="JTC-Kp-56T" firstAttribute="top" secondItem="N6U-E9-0Sd" secondAttribute="bottom" constant="25" id="Gvc-Bo-zmq"/>
+                            <constraint firstItem="dlB-kL-265" firstAttribute="top" secondItem="N6U-E9-0Sd" secondAttribute="bottom" constant="30" id="FCk-88-rma"/>
                             <constraint firstItem="lXC-dI-Pqw" firstAttribute="top" secondItem="K7o-p8-uJJ" secondAttribute="bottom" constant="10" id="HCV-Pk-CnV"/>
                             <constraint firstItem="K7o-p8-uJJ" firstAttribute="top" secondItem="7Ze-oP-Xjx" secondAttribute="bottom" constant="22" id="Igr-af-22I"/>
                             <constraint firstItem="kcP-C2-BoX" firstAttribute="top" secondItem="dlB-kL-265" secondAttribute="bottom" constant="15" id="Ptt-BB-FM7"/>
@@ -342,7 +327,6 @@
                             <constraint firstItem="K7o-p8-uJJ" firstAttribute="centerX" secondItem="7Ze-oP-Xjx" secondAttribute="centerX" id="fZd-3A-xir"/>
                             <constraint firstItem="N6U-E9-0Sd" firstAttribute="centerX" secondItem="fKf-yJ-Y4O" secondAttribute="centerX" id="jbe-wJ-ITh"/>
                             <constraint firstItem="N6U-E9-0Sd" firstAttribute="centerX" secondItem="K7o-p8-uJJ" secondAttribute="centerX" id="khN-FG-b7W"/>
-                            <constraint firstItem="dlB-kL-265" firstAttribute="top" secondItem="JTC-Kp-56T" secondAttribute="bottom" constant="30" id="mxQ-IG-FAC"/>
                             <constraint firstItem="7Ze-oP-Xjx" firstAttribute="top" secondItem="pMN-eG-aZK" secondAttribute="bottom" constant="30" id="ofz-Nc-n0o"/>
                             <constraint firstItem="kcP-C2-BoX" firstAttribute="centerX" secondItem="fKf-yJ-Y4O" secondAttribute="centerX" id="pA6-qS-iSl"/>
                             <constraint firstItem="zmX-iN-hDW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="kcP-C2-BoX" secondAttribute="bottom" constant="50" id="suW-Z2-HJa"/>
@@ -360,7 +344,6 @@
                     <connections>
                         <outlet property="invalid_pid_label" destination="N6U-E9-0Sd" id="14x-Rm-Sb5"/>
                         <outlet property="pid" destination="K7o-p8-uJJ" id="zHG-iv-mVs"/>
-                        <outlet property="specialty" destination="JTC-Kp-56T" id="M0V-AX-PAB"/>
                         <outlet property="submission_pending" destination="lXC-dI-Pqw" id="ARR-Bm-8ja"/>
                     </connections>
                 </viewController>
