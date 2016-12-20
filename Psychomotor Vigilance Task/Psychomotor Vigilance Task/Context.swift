@@ -15,6 +15,11 @@ struct ContextKeys{
     static let start_date = "start_date"
 }
 
+enum TimeOfDay: Int {
+    case am = 0
+    case pm = 1
+}
+
 class Context {
 //TODO: Convert into a singleton object to encapsulate persistence
     
@@ -34,12 +39,8 @@ class Context {
     
     var pvt_index: Int {                              //currently due pvt_index
         get {
-            let defaults = UserDefaults.standard
-            return defaults.integer(forKey: ContextKeys.pvt_index)
-        } set {
-            let defaults = UserDefaults.standard
-            defaults.set(newValue, forKey: ContextKeys.pvt_index)
-            defaults.synchronize()
+            let vector_index = (2*(day_offset-1) + self.time_of_day.rawValue)
+            return PVT_VECTOR[0...vector_index].reduce(0,{$0 + $1})
         }
     }
     
@@ -48,7 +49,6 @@ class Context {
             return defaults.array(forKey: ContextKeys.event_list) as! [[String : String]]?
         } set {
             let defaults = UserDefaults.standard
-            print("Setting event_list")
             defaults.set(newValue, forKey: ContextKeys.event_list)
             defaults.synchronize()
         }
@@ -63,14 +63,34 @@ class Context {
             defaults.synchronize()
         }
     }
+    
+    var day_offset: Int {
+        get {
+            let userCalendar = Calendar.current
+            let nowComponents = userCalendar.dateComponents([.year, .month, .day], from: Date())
+            let startComponents = userCalendar.dateComponents([.year, .month, .day], from: start_date!)
+            let days_between = userCalendar.dateComponents([.day], from: startComponents, to: nowComponents)
+            return days_between.day!
+        }
+    }
+    
+    var time_of_day: TimeOfDay {
+        get {
+            let userCalendar = Calendar.current
+            let nowComponents = userCalendar.dateComponents([.year, .month, .day, .hour], from: Date())
+            var noon_today_components = userCalendar.dateComponents([.year, .month, .day], from: Date())
+            noon_today_components.hour = 12
+            let time_between = userCalendar.dateComponents([.second], from: noon_today_components, to: nowComponents)
+            if time_between.second! > 0 {
+                return .pm
+            } else {
+                return .am
+            }
+        }
+    }
 
     var event_name: String {
         print ("pvt_" + String(pvt_index) + "_arm_1")                //debugging
         return "pvt_" + String(pvt_index) + "_arm_1"
-    }
-    
-    //MARK: -Methods
-    func increment_pvt_index(){
-        self.pvt_index += 1
     }
 }

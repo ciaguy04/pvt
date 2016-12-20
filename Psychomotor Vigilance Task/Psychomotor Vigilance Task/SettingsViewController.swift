@@ -157,7 +157,6 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         //#### Debugging code for beta testing ########
         //#### Used to reset pvt index and initialize arm
         //TODO: Remove when project goes to deployment
-        context.pvt_index = 1
         context.record = ""
         context.start_date = nil
         context.event_list = nil

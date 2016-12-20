@@ -76,7 +76,6 @@ class TestResultVC: UIViewController {
                 self.test_label.text! = status.rawValue
                 self.test_label.textColor = UIColor.green
                 self.status_update_timer.invalidate()
-                self.pvtvc.test_data.test_context.increment_pvt_index()
             } else {
                 self.test_label.text! = status.rawValue
                 self.test_label.textColor = UIColor.red

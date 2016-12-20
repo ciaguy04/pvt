@@ -154,7 +154,7 @@ class REDCapAPI {
                 
                 if let error_text = json["error"].string {
                     print("There was an error: \(error_text)")
-                    (delegate as! RCDelegate).submission_status = SubmissionStatus.api_call_error
+                    (delegate as! RCDelegate).submission_status = SubmissionStatus.start_date_api_call_error
                 } else if response.result.isSuccess  {
                     print("Successful Submission: \(json.array!)")
                     (delegate as! RCDelegate).submission_status = SubmissionStatus.success
