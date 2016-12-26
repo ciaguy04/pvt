@@ -10,10 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    //MARK: - Properties
-    var rc_delegate = RCDelegate()             //##
-    var context = Context()             //##
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -30,12 +26,6 @@ class ViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
         print(defaults.dictionaryRepresentation().debugDescription)
-        
-        /*
-        if self.rc_delegate.submission_status == SubmissionStatus.no_connectivity || self.rc_delegate.submission_status == SubmissionStatus.api_call_error {
-            hide_start_pvt()             //##
-        }
-        */
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,7 +41,4 @@ class ViewController: UIViewController {
         self.view!.viewWithTag(10)?.isHidden = false
     }
 }
-
-
-
 
