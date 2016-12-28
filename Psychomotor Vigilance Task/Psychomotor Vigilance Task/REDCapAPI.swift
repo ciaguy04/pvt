@@ -154,11 +154,19 @@ class REDCapAPI {
                 
                 if let error_text = json["error"].string {
                     print("There was an error: \(error_text)")
-                    (delegate as! RCDelegate).submission_status = SubmissionStatus.start_date_api_call_error
+                    (delegate as! RCDelegate).submission_status = SubmissionStatus.api_call_error
                 } else if response.result.isSuccess  {
                     print("Successful Submission: \(json.array!)")
-                    (delegate as! RCDelegate).submission_status = SubmissionStatus.success
-                    (delegate as! RCDelegate).data = json.array
+                    let new_json_list = json.array!.filter{$0["record"].string! == record_id}
+                    if new_json_list == [JSON]() {
+                        print("new json_list in export_records was null")
+                        (delegate as! RCDelegate).submission_status = SubmissionStatus.start_date_api_call_error
+                    } else {
+                        print("New JSON List: \(new_json_list.debugDescription) -> rc_delegate")
+                        print("Submission Status = success")
+                        (delegate as! RCDelegate).submission_status = SubmissionStatus.success
+                        (delegate as! RCDelegate).data = new_json_list
+                    }
                 } else {
                     print("not really sure what happened...")
                 }

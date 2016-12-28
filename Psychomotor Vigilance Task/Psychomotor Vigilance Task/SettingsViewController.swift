@@ -137,13 +137,20 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
             self.start_date_update_timer.invalidate()
             if status == SubmissionStatus.success {
                 self.rc_delegate[ContextKeys.start_date]!.persist_start_date_data(self.context)
+                self.start_pid = pid.text!
+                self.context.record = pid.text!
                 invalid_pid_label.textColor = UIColor.green                 //TODO: Consider merging this check with event
                 invalid_pid_label.text = "Successfully updated."
                 self.can_save_and_return = true                             //### Ditto to ^^^^
             } else {
-                print(self.rc_delegate[ContextKeys.event_list]!.submission_status?.rawValue ?? "Not sure what happened...")
+                print(self.rc_delegate[ContextKeys.start_date]!.submission_status?.rawValue ?? "Not sure what happened...")
                 let alert = UIAlertController(title: "Error!", message: status.rawValue, preferredStyle: .alert)
-                let default_action = UIAlertAction(title: "OK", style: .cancel)
+                let default_action = UIAlertAction(title: "OK", style: .default) {
+                    _ in
+                    self.pid!.text = self.start_pid!
+                    self.context.record = self.start_pid!
+                    self.can_save_and_return = true
+                }
                 alert.addAction(default_action)
                 self.present(alert, animated: true, completion: nil)
             }
@@ -170,9 +177,9 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         //specialty changed? -> update event dictionary
         if validate_pid() {
             if context.start_date == nil || pid_has_changed() {
-                self.start_pid = pid.text!
+                self.can_save_and_return = false
+                context.record = pid!.text
                 self.submission_pending.startAnimating()
-                context.record = pid.text!
                 find_start_date()
                 check_for_start_date_api_call()
                 print("Start Date: \(self.context.start_date)")
@@ -206,7 +213,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
             }
         } else {
             invalid_pid_label.textColor = UIColor.red
-            invalid_pid_label.text = "Please sync with REDCap."
+            invalid_pid_label.text = "Please enter valid ID and sync with REDCap."
         }
     }
 }
