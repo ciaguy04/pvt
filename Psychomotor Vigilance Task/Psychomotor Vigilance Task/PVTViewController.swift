@@ -56,8 +56,12 @@ class PVTViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.start_pvt_time = currentTimeMillis()
-        self.test_state_timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(start_trial_countdown), userInfo: nil, repeats: true)
+        if self.test_data.test_context.pvt_index >= 0 {
+            self.start_pvt_time = currentTimeMillis()
+            self.test_state_timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(start_trial_countdown), userInfo: nil, repeats: true)
+        } else {
+            self.performSegue(withIdentifier: "TestResultVC", sender: self)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {

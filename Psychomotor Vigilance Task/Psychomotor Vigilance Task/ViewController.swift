@@ -24,9 +24,6 @@ class ViewController: UIViewController {
             let default_action = UIAlertAction(title: "OK", style: .cancel)
             alert.addAction(default_action)
             self.present(alert, animated: true, completion: nil)
-            self.hide_start_pvt()
-        } else {
-            self.show_start_pvt()
         }
         print(defaults.dictionaryRepresentation().debugDescription)
     }

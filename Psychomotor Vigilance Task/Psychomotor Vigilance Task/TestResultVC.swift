@@ -32,16 +32,18 @@ class TestResultVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: false)
-        initialize_activity_indicator()
-        self.status_update_timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(update_status), userInfo: nil, repeats: true)
-        
-//        let graphView = ScrollableGraphView(frame: CGRect(x:80, y:100, width: 250, height: 400))
-//        let labels = [1...pvtvc_trial_time_list.count]
-//        graphView.set(data: intArray_to_dubArray(pvtvc_trial_time_list), withLabels: ["1", "2", "3", "4", "5"])
-//        graphView.shouldAdaptRange = true
-//        graphView.shouldRangeAlwaysStartAtZero = true
-//        self.view.addSubview(graphView)
-        // Do any additional setup after loading the view.
+        if self.pvtvc.test_data.test_context.pvt_index >= 0 {
+            initialize_activity_indicator()
+            self.status_update_timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(update_status), userInfo: nil, repeats: true)
+        } else if pvtvc.test_data.test_context.pvt_index == -1 {
+            self.submission_pending.isHidden = true
+            self.test_label.textColor = UIColor.red
+            self.test_label!.text = "Your study has not yet started.  Please contact the study coordinator if you believe this is an error."
+        } else if pvtvc.test_data.test_context.pvt_index == -2 {
+            self.submission_pending.isHidden = true
+            self.test_label.textColor = UIColor.red
+            self.test_label!.text = "Your study has concluded.  Thank you for participating!"
+        }
     }
 
     override func didReceiveMemoryWarning() {
