@@ -44,16 +44,6 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     //MARK: - Custom
     private func initialize_views() {
         pid.delegate = self
@@ -160,19 +150,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     }
     
     //MARK: - Actions
-    @IBAction func reset_pvt_index(_ sender: Any) {
-        //#### Debugging code for beta testing ########
-        //#### Used to reset pvt index and initialize arm
-        //TODO: Remove when project goes to deployment
-        context.record = ""
-        context.start_date = nil
-        context.event_list = nil
-        
-        navigationController!.popToRootViewController(animated: true)
-        //??let root_vc = self.navigationController?.viewControllers.first
-    }
-    
-    @IBAction func sync_changes(_ sender: Any) {            //########%%%%%%%%%%%%######### <when lost - return here> ######$$$%%%%%
+    @IBAction func sync_changes(_ sender: Any) {
         
         //specialty changed? -> update event dictionary
         if validate_pid() {
@@ -195,7 +173,6 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
             check_for_event_api_call()
         }
     }
-    
     
     @IBAction func save_and_return(_ sender: Any) {
         if context.start_date != nil || !pid_has_changed() {

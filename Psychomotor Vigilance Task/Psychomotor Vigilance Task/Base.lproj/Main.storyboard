@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3da-Za-wcd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3da-Za-wcd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,7 +36,7 @@
                                     <segue destination="N8L-2j-MUm" kind="show" id="IUu-Fb-N3z"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.1.1 (beta)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rf8-g2-KD9">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.1.2 (beta)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rf8-g2-KD9">
                                 <rect key="frame" x="105" y="527" width="165" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="165" id="6XO-og-pEk"/>
@@ -279,21 +279,6 @@
                                 <color key="textColor" red="0.91861182451248169" green="0.25989589095115662" blue="0.28707003593444824" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcP-C2-BoX">
-                                <rect key="frame" x="112.5" y="272" width="150" height="30"/>
-                                <color key="backgroundColor" red="0.076923094689846039" green="0.029708905145525932" blue="0.091617114841938019" alpha="0.88389008619999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="UJ4-29-24Q"/>
-                                    <constraint firstAttribute="height" constant="30" id="aYV-O7-lDP"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Initialize (beta only)">
-                                    <color key="titleColor" red="1" green="0.07482077878" blue="0.053801445959999999" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="reset_pvt_index:" destination="VtE-sG-nI8" eventType="touchUpInside" id="DXO-Fd-wAd"/>
-                                </connections>
-                            </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="lXC-dI-Pqw">
                                 <rect key="frame" x="169" y="113" width="37" height="37"/>
                                 <color key="color" red="1" green="0.93269016059999998" blue="0.1039846348" alpha="1" colorSpace="calibratedRGB"/>
@@ -321,15 +306,12 @@
                             <constraint firstItem="dlB-kL-265" firstAttribute="top" secondItem="N6U-E9-0Sd" secondAttribute="bottom" constant="30" id="FCk-88-rma"/>
                             <constraint firstItem="lXC-dI-Pqw" firstAttribute="top" secondItem="K7o-p8-uJJ" secondAttribute="bottom" constant="10" id="HCV-Pk-CnV"/>
                             <constraint firstItem="K7o-p8-uJJ" firstAttribute="top" secondItem="7Ze-oP-Xjx" secondAttribute="bottom" constant="22" id="Igr-af-22I"/>
-                            <constraint firstItem="kcP-C2-BoX" firstAttribute="top" secondItem="dlB-kL-265" secondAttribute="bottom" constant="15" id="Ptt-BB-FM7"/>
                             <constraint firstItem="dlB-kL-265" firstAttribute="centerX" secondItem="fKf-yJ-Y4O" secondAttribute="centerX" id="SZv-md-eiR"/>
                             <constraint firstItem="7Ze-oP-Xjx" firstAttribute="centerX" secondItem="fKf-yJ-Y4O" secondAttribute="centerX" id="bB9-3K-mQy"/>
                             <constraint firstItem="K7o-p8-uJJ" firstAttribute="centerX" secondItem="7Ze-oP-Xjx" secondAttribute="centerX" id="fZd-3A-xir"/>
                             <constraint firstItem="N6U-E9-0Sd" firstAttribute="centerX" secondItem="fKf-yJ-Y4O" secondAttribute="centerX" id="jbe-wJ-ITh"/>
                             <constraint firstItem="N6U-E9-0Sd" firstAttribute="centerX" secondItem="K7o-p8-uJJ" secondAttribute="centerX" id="khN-FG-b7W"/>
                             <constraint firstItem="7Ze-oP-Xjx" firstAttribute="top" secondItem="pMN-eG-aZK" secondAttribute="bottom" constant="30" id="ofz-Nc-n0o"/>
-                            <constraint firstItem="kcP-C2-BoX" firstAttribute="centerX" secondItem="fKf-yJ-Y4O" secondAttribute="centerX" id="pA6-qS-iSl"/>
-                            <constraint firstItem="zmX-iN-hDW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="kcP-C2-BoX" secondAttribute="bottom" constant="50" id="suW-Z2-HJa"/>
                         </constraints>
                     </view>
                     <toolbarItems>
