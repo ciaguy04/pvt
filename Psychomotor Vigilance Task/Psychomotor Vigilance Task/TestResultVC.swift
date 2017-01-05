@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ScrollableGraphView
 
 class TestResultVC: UIViewController {
     
@@ -50,26 +49,6 @@ class TestResultVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-    // MARK: - Custom VC Methods
-//    func intArray_to_dubArray(_ intArray: [Int]) -> [Double] {
-//        var dubArray: [Double] = []
-//        for i in intArray {
-//            dubArray.append(Double(i))
-//        }
-//        return dubArray
-//    }
     
     @objc private func update_status () {
         if let status = self.pvtvc.rc_delegate.submission_status {

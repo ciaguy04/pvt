@@ -17,15 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //Initializing default
         let defaults = UserDefaults.standard
-        if defaults.integer(forKey: ContextKeys.pvt_index) == 0 {
-            defaults.set(1, forKey: ContextKeys.pvt_index)
-            defaults.synchronize()
-        }
         
         if defaults.string(forKey: ContextKeys.REDCap_record) == nil {
-            defaults.synchronize()
-            print("setting ContextKeys.REDCap_record")
             defaults.set("", forKey: ContextKeys.REDCap_record)
             defaults.synchronize()
         }

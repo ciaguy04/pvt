@@ -73,10 +73,10 @@ class REDCapAPI {
                 //TODO: return to main screen +/- save PVT data to send at a later time.
             }
             if let rawJSONResponse = response.result.value {
-                if response.result.isSuccess && JSON(rawJSONResponse)["count"] == nil  {
+                if response.result.isSuccess && JSON(rawJSONResponse)["count"] == JSON.null  {
                     (delegate as! RCDelegate).submission_status = SubmissionStatus.api_call_error
                 }
-                if response.result.isSuccess && JSON(rawJSONResponse)["count"] != nil  {
+                if response.result.isSuccess && JSON(rawJSONResponse)["count"] != JSON.null  {
                     (delegate as! RCDelegate).submission_status = SubmissionStatus.success
                 }
             }

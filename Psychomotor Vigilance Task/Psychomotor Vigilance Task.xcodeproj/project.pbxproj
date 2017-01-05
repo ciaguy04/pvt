@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F97712764CC6D7B0AF54F7C /* Pods_Psychomotor_Vigilance_Task.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6307F8F931B4CE116AE7391C /* Pods_Psychomotor_Vigilance_Task.framework */; };
 		6510B57D1DD52ED6002A4E14 /* TestResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6510B57C1DD52ED6002A4E14 /* TestResultVC.swift */; };
 		65435D8F1DC2C0C500C334F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65435D8E1DC2C0C500C334F8 /* AppDelegate.swift */; };
 		65435D911DC2C0C500C334F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65435D901DC2C0C500C334F8 /* ViewController.swift */; };
@@ -24,6 +23,7 @@
 		658A10981DC2D4B800250600 /* REDCapAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658A10971DC2D4B800250600 /* REDCapAPI.swift */; };
 		65BCAD431DC4544700A2A223 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BCAD421DC4544700A2A223 /* Test.swift */; };
 		65ECF5F41DC7917900EB07EF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ECF5F31DC7917900EB07EF /* SettingsViewController.swift */; };
+		FA23CE24040C415DD6FD1CFC /* Pods_Psychomotor_Vigilance_Task.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3662DD60C414A745C4A77D86 /* Pods_Psychomotor_Vigilance_Task.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		15B1E33ED504F747A123A03F /* Pods-Psychomotor Vigilance Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psychomotor Vigilance Task.release.xcconfig"; path = "Pods/Target Support Files/Pods-Psychomotor Vigilance Task/Pods-Psychomotor Vigilance Task.release.xcconfig"; sourceTree = "<group>"; };
-		6307F8F931B4CE116AE7391C /* Pods_Psychomotor_Vigilance_Task.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Psychomotor_Vigilance_Task.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3662DD60C414A745C4A77D86 /* Pods_Psychomotor_Vigilance_Task.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Psychomotor_Vigilance_Task.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5401FB5D202FA58EA4D526A1 /* Pods-Psychomotor Vigilance Task.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psychomotor Vigilance Task.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Psychomotor Vigilance Task/Pods-Psychomotor Vigilance Task.debug.xcconfig"; sourceTree = "<group>"; };
 		6510B57C1DD52ED6002A4E14 /* TestResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestResultVC.swift; sourceTree = "<group>"; };
 		65435D8B1DC2C0C500C334F8 /* Psychomotor Vigilance Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Psychomotor Vigilance Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65435D8E1DC2C0C500C334F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 		658A10971DC2D4B800250600 /* REDCapAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = REDCapAPI.swift; sourceTree = "<group>"; };
 		65BCAD421DC4544700A2A223 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		65ECF5F31DC7917900EB07EF /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		78597FE1C68E8C3E41E6C743 /* Pods-Psychomotor Vigilance Task.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psychomotor Vigilance Task.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Psychomotor Vigilance Task/Pods-Psychomotor Vigilance Task.debug.xcconfig"; sourceTree = "<group>"; };
+		88CC082F34FFD953FE724289 /* Pods-Psychomotor Vigilance Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Psychomotor Vigilance Task.release.xcconfig"; path = "Pods/Target Support Files/Pods-Psychomotor Vigilance Task/Pods-Psychomotor Vigilance Task.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F97712764CC6D7B0AF54F7C /* Pods_Psychomotor_Vigilance_Task.framework in Frameworks */,
+				FA23CE24040C415DD6FD1CFC /* Pods_Psychomotor_Vigilance_Task.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,8 +131,8 @@
 			isa = PBXGroup;
 			children = (
 				65435D8E1DC2C0C500C334F8 /* AppDelegate.swift */,
-				65ECF5F31DC7917900EB07EF /* SettingsViewController.swift */,
 				65435D901DC2C0C500C334F8 /* ViewController.swift */,
+				65ECF5F31DC7917900EB07EF /* SettingsViewController.swift */,
 				65435DBF1DC2C1F000C334F8 /* PVTViewController.swift */,
 				6510B57C1DD52ED6002A4E14 /* TestResultVC.swift */,
 			);
@@ -146,8 +146,8 @@
 				65435DA51DC2C0C600C334F8 /* Psychomotor Vigilance TaskTests */,
 				65435DB01DC2C0C600C334F8 /* Psychomotor Vigilance TaskUITests */,
 				65435D8C1DC2C0C500C334F8 /* Products */,
-				829785738388D91A4938E5A4 /* Pods */,
-				744712AFE18CC30E77402E90 /* Frameworks */,
+				9B760A1AA415822E580D2AA9 /* Pods */,
+				89A6314F827794FF3C97C1D8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -199,19 +199,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		744712AFE18CC30E77402E90 /* Frameworks */ = {
+		89A6314F827794FF3C97C1D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6307F8F931B4CE116AE7391C /* Pods_Psychomotor_Vigilance_Task.framework */,
+				3662DD60C414A745C4A77D86 /* Pods_Psychomotor_Vigilance_Task.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		829785738388D91A4938E5A4 /* Pods */ = {
+		9B760A1AA415822E580D2AA9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				78597FE1C68E8C3E41E6C743 /* Pods-Psychomotor Vigilance Task.debug.xcconfig */,
-				15B1E33ED504F747A123A03F /* Pods-Psychomotor Vigilance Task.release.xcconfig */,
+				5401FB5D202FA58EA4D526A1 /* Pods-Psychomotor Vigilance Task.debug.xcconfig */,
+				88CC082F34FFD953FE724289 /* Pods-Psychomotor Vigilance Task.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -223,12 +223,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65435DB61DC2C0C600C334F8 /* Build configuration list for PBXNativeTarget "Psychomotor Vigilance Task" */;
 			buildPhases = (
-				10248D28A10E833EB371F2AB /* [CP] Check Pods Manifest.lock */,
+				995DAEA563897A768935E3C6 /* [CP] Check Pods Manifest.lock */,
 				65435D871DC2C0C500C334F8 /* Sources */,
 				65435D881DC2C0C500C334F8 /* Frameworks */,
 				65435D891DC2C0C500C334F8 /* Resources */,
-				198BB1F813B3D0AF382A184C /* [CP] Embed Pods Frameworks */,
-				D1546D88302E315F38CC2F33 /* [CP] Copy Pods Resources */,
+				01281F1C02A8C77DB37D8D06 /* [CP] Embed Pods Frameworks */,
+				E62FA8295163DFAACB242158 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -350,22 +350,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		10248D28A10E833EB371F2AB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		198BB1F813B3D0AF382A184C /* [CP] Embed Pods Frameworks */ = {
+		01281F1C02A8C77DB37D8D06 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -380,7 +365,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Psychomotor Vigilance Task/Pods-Psychomotor Vigilance Task-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D1546D88302E315F38CC2F33 /* [CP] Copy Pods Resources */ = {
+		995DAEA563897A768935E3C6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E62FA8295163DFAACB242158 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -564,9 +564,9 @@
 		};
 		65435DB71DC2C0C600C334F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 78597FE1C68E8C3E41E6C743 /* Pods-Psychomotor Vigilance Task.debug.xcconfig */;
+			baseConfigurationReference = 5401FB5D202FA58EA4D526A1 /* Pods-Psychomotor Vigilance Task.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
@@ -585,9 +585,9 @@
 		};
 		65435DB81DC2C0C600C334F8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15B1E33ED504F747A123A03F /* Pods-Psychomotor Vigilance Task.release.xcconfig */;
+			baseConfigurationReference = 88CC082F34FFD953FE724289 /* Pods-Psychomotor Vigilance Task.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: James Andry (Q3CA99D23M)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: James Andry (Q3CA99D23M)";

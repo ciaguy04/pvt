@@ -22,10 +22,6 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     var rc_delegate: [String: RCDelegate] = [:]
     var context: Context = Context()
     
-    
-    //TODO: create User class and factor out relevant properties
-    //TODO: create date picker object for first
-    
     // MARK: - VC Lifecycle Mgmt
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +46,6 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         if let pid_text = context.record {
             self.pid.text = pid_text
             self.start_pid = pid_text
-            print("Start PID: \(self.start_pid!)")
         }
     }
     
@@ -63,8 +58,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    //MARK: Get Event API Call Methods
-    private func update_events() {                                                  //########%%
+    //MARK: Update Event API Call Methods
+    private func update_events() {
         self.rc_delegate[ContextKeys.event_list] = RCDelegate()
         REDCapAPI.export_events(fromArm: 1, withDelegate: self.rc_delegate[ContextKeys.event_list]!)
         print("RC API called!!")
@@ -88,7 +83,6 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
                 invalid_pid_label.text = "Successfully updated."
                 self.can_save_and_return = true
             } else {
-                print(self.rc_delegate[ContextKeys.event_list]!.submission_status?.rawValue ?? "Not sure what happened...")
                 let alert = UIAlertController(title: "Error!", message: status.rawValue, preferredStyle: .alert)
                 let default_action = UIAlertAction(title: "OK", style: .cancel)
                 alert.addAction(default_action)
