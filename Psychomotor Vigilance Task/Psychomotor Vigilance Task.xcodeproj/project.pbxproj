@@ -567,7 +567,7 @@
 			baseConfigurationReference = 5401FB5D202FA58EA4D526A1 /* Pods-Psychomotor Vigilance Task.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon2;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = Q3CA99D23M;
@@ -588,7 +588,7 @@
 			baseConfigurationReference = 88CC082F34FFD953FE724289 /* Pods-Psychomotor Vigilance Task.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon2;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: James Andry (Q3CA99D23M)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: James Andry (Q3CA99D23M)";
 				DEVELOPMENT_TEAM = Q3CA99D23M;
