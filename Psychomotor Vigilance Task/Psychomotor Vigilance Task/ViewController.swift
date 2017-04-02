@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         let defaults = UserDefaults.standard
+        print(defaults.debugDescription)
         
         //Reminder to setup Participant ID (if pid is nil)
         if defaults.string(forKey: ContextKeys.REDCap_record) == "" {

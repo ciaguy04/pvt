@@ -32,7 +32,7 @@ class PVTViewController: UIViewController {
     private var trial_state: TrialState
     private var start_trial_time: Int64             //the beginning of a given trial
     private var current_trial_time: Int64           //used to compare current time to start_trial_time
-    private var start_pvt_time: Int64               //use this variable to track when 3 minutes are up
+    private var num_pvt_trials: Int64               //use this variable to track when 32 trials have been completed
     
     //MARK: - Data Management Properties
     var test_data: Test
@@ -42,7 +42,7 @@ class PVTViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         self.start_trial_time = 0
         self.current_trial_time = 0
-        self.start_pvt_time = 0
+        self.num_pvt_trials = 0
         self.trial_state = .Inactive
         self.test_data = Test()
         super.init(coder: aDecoder)
@@ -57,7 +57,6 @@ class PVTViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if self.test_data.test_context.pvt_index >= 0 {
-            self.start_pvt_time = currentTimeMillis()
             self.test_state_timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(start_trial_countdown), userInfo: nil, repeats: true)
         } else {
             self.performSegue(withIdentifier: "TestResultVC", sender: self)
@@ -92,6 +91,7 @@ class PVTViewController: UIViewController {
     
     //### method called to start a single trial of the overall 3 min test
     @objc private func start_trial(){
+        print("Starting trial # \(num_pvt_trials)")
         self.trial_state = .Active
         self.start_trial_time = currentTimeMillis()
         self.current_trial_time = currentTimeMillis()
@@ -101,14 +101,15 @@ class PVTViewController: UIViewController {
     //### method called by start_trial(), which updates the couter_view every 50-100ms (max: 5s per trial)
     @objc private func update_counter() {
         self.current_trial_time = currentTimeMillis()
-        if (self.current_trial_time - self.start_trial_time <= 5000){
+        if (self.current_trial_time - self.start_trial_time <= 1500){
             counter_view!.text! = String(self.current_trial_time - self.start_trial_time)
             print(counter_view!.text!)
         }
         else {
             self.trial_timer.invalidate()
-            self.test_data.trial_time_list.append(5000)
-            counter_view!.text! = String(5000)
+            self.test_data.trial_time_list.append(1500)
+            counter_view!.text! = String(1500)
+            self.num_pvt_trials += 1
             self.trial_state = .Inactive
         }
     }
@@ -116,7 +117,7 @@ class PVTViewController: UIViewController {
     //### if test duration has been < 3min and a test is not active, start one
     //### if time has expired, navigate to next VC and submit to REDCap
     @objc private func start_trial_countdown(){
-        if currentTimeMillis() - self.start_pvt_time <= 180000 {
+        if num_pvt_trials < 32 {                // ## ## change to if <= 32 iterations
             switch self.trial_state{
             case .Inactive:
                 self.trial_state = .Delay
@@ -180,6 +181,7 @@ class PVTViewController: UIViewController {
             self.current_trial_time = currentTimeMillis()
             self.trial_timer.invalidate()
             self.trial_state = .Inactive
+            self.num_pvt_trials += 1
             self.test_data.trial_time_list.append(self.current_trial_time - self.start_trial_time)
             counter_view!.text! = String(self.current_trial_time - self.start_trial_time)
             

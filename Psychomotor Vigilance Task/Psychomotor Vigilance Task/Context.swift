@@ -24,7 +24,7 @@ class Context {
 //TODO: Convert into a singleton object to encapsulate persistence
     
     let PVT_DATA_COMPLETE = 1               //constant denotes '1' (unverified) status in REDCap Project
-    let PVT_VECTOR = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1]
+    let PVT_VECTOR = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
     
     //MARK: - Computed Properties
     var record: String? {
@@ -39,16 +39,17 @@ class Context {
     
     var pvt_index: Int {                              //currently due pvt_index
         get {
-            let vector_index = (2*(day_offset-1) + self.time_of_day.rawValue)
-            print("Vector Index: \(vector_index), Day Offset: \(day_offset), PVT_VECTOR.count\(PVT_VECTOR.count)")
-            if (vector_index > PVT_VECTOR.count) {         // Bounds check
+            let _pvt_index = (2*(day_offset-1) + self.time_of_day.rawValue)
+            print("Vector Index: \(_pvt_index)")
+            if (_pvt_index > PVT_VECTOR.count) {         // Bounds check
                 print("study ended")
                 return -2
-            } else if (day_offset-1 < 0) {
+            }
+            if (day_offset-1 < 0) {
                 print("too early!")
                 return -1
             } else {
-                return PVT_VECTOR[0...vector_index].reduce(0,{$0 + $1})
+                return _pvt_index
             }
         }
     }

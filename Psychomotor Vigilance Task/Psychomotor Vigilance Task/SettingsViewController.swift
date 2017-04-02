@@ -46,6 +46,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         if let pid_text = context.record {
             self.pid.text = pid_text
             self.start_pid = pid_text
+            print("Start PID: \(self.start_pid!)")
         }
     }
     

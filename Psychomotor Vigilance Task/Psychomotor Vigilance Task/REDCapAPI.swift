@@ -51,6 +51,10 @@ class REDCapAPI {
         jsonString.insert("]", at:jsonString.endIndex)
         print(jsonString)
         
+        //alternate implementation
+        //
+        
+        
         //Building headers for post method body - comment to avoid API calls during debugging above code -> see 'end comment'
         let parameters: Parameters =
         [   "token": TOKEN,
